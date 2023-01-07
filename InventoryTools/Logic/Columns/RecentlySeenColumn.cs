@@ -22,9 +22,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Last Seen";
+        public override string Name { get; set; } = "最近访问";
         public override float Width { get; set; } = 100;
-        public override string HelpText { get; set; } = "Displays the last time an item was seen.";
+        public override string HelpText { get; set; } = "显示上次查看物品的时间。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

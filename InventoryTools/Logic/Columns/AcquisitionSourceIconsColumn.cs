@@ -106,11 +106,11 @@ namespace InventoryTools.Logic.Columns
             return String.Join(", ", item.Sources.Select(c => c.Name));
         }
 
-        public override string Name { get; set; } = "Acqusition";
+        public override string Name { get; set; } = "获取方式";
         public override float Width { get; set; } = 210;
 
         public override string HelpText { get; set; } =
-            "Shows icons indicating what items can be obtained with(gathering, crafting, currency, etc)";
+            "显示图标指出哪些物品可以通过（收集、制作、货币等）获取。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

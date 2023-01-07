@@ -25,11 +25,11 @@ namespace InventoryTools.Logic.Columns
             return null;
         }
 
-        public override string Name { get; set; } = "Right Click";
+        public override string Name { get; set; } = "右键";
         public override float Width { get; set; } = 1.0f;
 
         public override string HelpText { get; set; } =
-            "You shouldn't see this, but if you do it's the column that adds in the right click functionality.";
+            "您不应该看到这个，但是如果您这样做，则会添加右键功能的栏目。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

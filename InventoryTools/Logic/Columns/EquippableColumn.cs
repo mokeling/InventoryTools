@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Equippable By";
+        public override string Name { get; set; } = "装备职业";
         public override float Width { get; set; } = 200;
-        public override string HelpText { get; set; } = "Shows what class/job an item can be equipped by";
+        public override string HelpText { get; set; } = "显示物品可以装备的职业。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

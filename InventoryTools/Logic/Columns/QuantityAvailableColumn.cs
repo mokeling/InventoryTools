@@ -22,11 +22,11 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Quantity Available";
+        public override string Name { get; set; } = "可用数量";
         public override float Width { get; set; } = 100;
 
         public override string HelpText { get; set; } =
-            "The number of items available across all inventories of this item.";
+            "所有库存中该物品的可用的数量。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

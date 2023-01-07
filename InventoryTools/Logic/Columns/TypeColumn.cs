@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Type";
+        public override string Name { get; set; } = "类型";
         public override float Width { get; set; } = 80.0f;
-        public override string HelpText { get; set; } = "The type of the item.";
+        public override string HelpText { get; set; } = "物品类型。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

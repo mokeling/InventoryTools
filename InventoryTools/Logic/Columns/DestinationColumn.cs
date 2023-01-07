@@ -21,14 +21,14 @@ namespace InventoryTools.Logic.Columns
         {
             var destination = item.DestinationRetainerId.HasValue
                 ? PluginService.CharacterMonitor.Characters[item.DestinationRetainerId.Value]?.FormattedName ?? ""
-                : "Unknown";
+                : "未知";
             var destinationBag = item.DestinationBag?.ToInventoryCategory().FormattedName() ?? "";
             return destination + " - " + destinationBag;
         }
 
-        public override string Name { get; set; } = "Destination";
+        public override string Name { get; set; } = "目标栏位";
         public override float Width { get; set; } = 100.0f;
-        public override string HelpText { get; set; } = "Shows where the item should be moved to.";
+        public override string HelpText { get; set; } = "显示应将物品移动到的位置。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

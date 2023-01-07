@@ -8,7 +8,7 @@ namespace InventoryTools.Logic.Columns
     {
         
         public override string HelpText { get; set; } =
-            "Shows the minimum price of both the NQ and HQ form of the item. This data is sourced from universalis.";
+            "显示物品NQ和HQ最低价格。此数据来自universalis。";
         
         public override (int,int)? CurrentValue(InventoryItem item)
         {
@@ -51,6 +51,6 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "MB Minimum Price NQ/HQ";
+        public override string Name { get; set; } = "市场板NQ/HQ最低价格";
     }
 }

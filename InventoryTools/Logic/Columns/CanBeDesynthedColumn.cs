@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Can be Desynthed?";
+        public override string Name { get; set; } = "可以分解?";
         public override float Width { get; set; } = 100;
-        public override string HelpText { get; set; } = "Can the item by desynthed?";
+        public override string HelpText { get; set; } = "这个物品可以分解吗？";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Boolean;

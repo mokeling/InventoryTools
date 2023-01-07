@@ -10,8 +10,8 @@ namespace InventoryTools.Logic.Columns
 {
     public class MarketBoardPriceColumn : DoubleGilColumn
     {
-        protected static readonly string LoadingString = "loading...";
-        protected static readonly string UntradableString = "untradable";
+        protected static readonly string LoadingString = "加载中...";
+        protected static readonly string UntradableString = "不可交易";
         protected static readonly int Loading = -1;
         protected static readonly int Untradable = -2;
 
@@ -53,7 +53,7 @@ namespace InventoryTools.Logic.Columns
             {
                 base.DoDraw(currentValue, rowIndex, filterConfiguration);
                 ImGui.SameLine();
-                if (ImGui.SmallButton("R##" + rowIndex))
+                if (ImGui.SmallButton("刷新##" + rowIndex))
                 {
                     return new RefreshPricingEvent();
                 }
@@ -106,9 +106,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "MB Average Price NQ/HQ";
+        public override string Name { get; set; } = "市场板NQ/HQ平均价格";
         public override string HelpText { get; set; } =
-            "Shows the average price of both the NQ and HQ form of the item. This data is sourced from universalis.";
+            "显示物品的NQ和HQ的平均价格。此数据来自 universalis。";
         public override float Width { get; set; } = 200.0f;
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;

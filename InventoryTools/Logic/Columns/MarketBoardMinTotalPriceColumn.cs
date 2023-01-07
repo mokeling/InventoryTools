@@ -8,7 +8,7 @@ namespace InventoryTools.Logic.Columns
     public class MarketBoardMinTotalPriceColumn : MarketBoardMinPriceColumn
     {
         public override string HelpText { get; set; } =
-            "Shows the minimum price of both the NQ and HQ form of the item and multiplies it by the quantity available. This data is sourced from universalis.";
+            "显示物品的NQ和HQ的最低价格，并将其乘以可得数量。此数据来自 universalis。";
         public override FilterType AvailableIn => Logic.FilterType.SearchFilter | Logic.FilterType.SortingFilter;
 
         public override IColumnEvent? DoDraw((int, int)? currentValue, int rowIndex,
@@ -62,6 +62,6 @@ namespace InventoryTools.Logic.Columns
             return value.HasValue ? ((int)(value.Value.Item1 * currentValue.QuantityRequired), (int)(value.Value.Item2 * currentValue.QuantityRequired)) : null;
         }
 
-        public override string Name { get; set; } = "MB Minimum Total Price";
+        public override string Name { get; set; } = "市场板最低总价";
     }
 }

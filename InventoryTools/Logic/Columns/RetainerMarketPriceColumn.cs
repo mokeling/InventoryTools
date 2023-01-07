@@ -21,11 +21,11 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Retainer Unit Price";
+        public override string Name { get; set; } = "雇员单价";
         public override float Width { get; set; } = 100;
 
         public override string HelpText { get; set; } =
-            "If the item is selling on the market, this is the price it has been put up for.";
+            "如果该物品在市场上出售，这就是它的标价。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

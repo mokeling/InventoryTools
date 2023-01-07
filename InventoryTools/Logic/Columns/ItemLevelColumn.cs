@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Item Level";
+        public override string Name { get; set; } = "物品等级";
         public override float Width { get; set; } = 80.0f;
-        public override string HelpText { get; set; } = "Shows the level required to equip the item.";
+        public override string HelpText { get; set; } = "显示装备物品所需的等级。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

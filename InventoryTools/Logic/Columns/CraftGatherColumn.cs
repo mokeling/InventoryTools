@@ -34,16 +34,16 @@ namespace InventoryTools.Logic.Columns
             ImGui.TableNextColumn();
             if (CurrentValue(item) == true)
             {
-                if (ImGui.SmallButton("Gather##Gather" + rowIndex))
+                if (ImGui.SmallButton("采集##Gather" + rowIndex))
                 {
                     Service.Commands.ProcessCommand("/gather " + item.Name);
                 }
             }
         }
 
-        public override string Name { get; set; } = "Gather";
+        public override string Name { get; set; } = "采集";
         public override float Width { get; set; } = 100;
-        public override string HelpText { get; set; } = "Shows a button that links to gatherbuddy's /gather function.";
+        public override string HelpText { get; set; } = "显示一个链接到Gather Buddy的/gather指令按钮。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

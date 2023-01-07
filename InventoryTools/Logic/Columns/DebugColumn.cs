@@ -13,7 +13,7 @@ namespace InventoryTools.Logic.Columns
 
         public override string? CurrentValue(ItemEx item)
         {
-            return "Item Search: " + item.ItemSearchCategory.Row + " - Ui Category: " + item.ItemUICategory.Row + " - Sort Category: " + item.ItemSortCategory.Row + " - Equip Slot Category: " + item.EquipSlotCategory.Row + " - Class Job Category: " + item.ClassJobCategory.Row + " - Buy: " + item.PriceMid + " - Unknown: " + item.Unknown19;
+            return "物品搜索：" + item.ItemSearchCategory.Row + " - UI类型：" + item.ItemUICategory.Row + " - 分类类型：" + item.ItemSortCategory.Row + " - 装备类型：" + item.EquipSlotCategory.Row + " - 职业类型：" + item.ClassJobCategory.Row + " - 购买：" + item.PriceMid + " - 未知：" + item.Unknown19;
         }
 
         public override string? CurrentValue(SortingResult item)
@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Debug - General Information";
+        public override string Name { get; set; } = "调试 - 一般信息";
         public override float Width { get; set; } = 200;
-        public override string HelpText { get; set; } = "Shows basic debug information";
+        public override string HelpText { get; set; } = "显示基本调试信息。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override bool IsDebug { get; set; } = true;

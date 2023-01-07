@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Debug - Item ID";
+        public override string Name { get; set; } = "调试 - 物品ID";
         public override float Width { get; set; } = 100.0f;
-        public override string HelpText { get; set; } = "Shows the item's internal ID.";
+        public override string HelpText { get; set; } = "显示物品的内部ID。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override bool IsDebug { get; set; } = true;
