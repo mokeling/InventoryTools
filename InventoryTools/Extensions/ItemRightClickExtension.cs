@@ -105,7 +105,7 @@ namespace InventoryTools.Extensions
                     ImGui.Separator();
                     firstItem = false;
                 }
-                if (ImGui.Selectable("Open in Crafting Log"))
+                if (ImGui.Selectable("在制作笔记打开"))
                 {
                     PluginService.GameInterface.OpenCraftingLog(item.ItemId, item.RecipeId);
                 }
@@ -118,7 +118,7 @@ namespace InventoryTools.Extensions
                     ImGui.Separator();
                     firstItem = false;
                 }
-                if (ImGui.Selectable("Remove from craft list"))
+                if (ImGui.Selectable("从制作清单中移除"))
                 {
                     configuration.CraftList.RemoveCraftItem(item.ItemId, item.Flags);
                     configuration.NeedsRefresh = true;
@@ -137,7 +137,7 @@ namespace InventoryTools.Extensions
                             ImGui.Separator();
                             firstItem = false;
                         }
-                        if (ImGui.Selectable("Switch to Phase " + (i + 1)))
+                        if (ImGui.Selectable("切换到阶段 " + (i + 1)))
                         {
                             item.SwitchPhase(i);
                             configuration.StartRefresh();
@@ -163,7 +163,7 @@ namespace InventoryTools.Extensions
                             firstItem = false;
                         }
 
-                        if (ImGui.Selectable("Add " + item.QuantityNeeded + " item to craft list - " + filter.Name))
+                        if (ImGui.Selectable("添加 " + item.QuantityNeeded + " 物品到制作清单 - " + filter.Name))
                         {
                             filter.CraftList.AddCraftItem(item.Item.RowId, item.QuantityNeeded,
                                 InventoryItem.ItemFlags.None);
@@ -173,7 +173,7 @@ namespace InventoryTools.Extensions
                             configuration.StartRefresh();
                         }
                     }
-                    if (ImGui.Selectable("Add " + item.QuantityNeeded + " item to new craft list"))
+                    if (ImGui.Selectable("添加 " + item.QuantityNeeded + " 物品到新制作清单"))
                     {
                         Service.Framework.RunOnTick(() =>
                         {
@@ -195,27 +195,27 @@ namespace InventoryTools.Extensions
         {
             ImGui.Text(item.NameString);
             ImGui.Separator();
-            if (ImGui.Selectable("Open in Garland Tools"))
+            if (ImGui.Selectable("在Garland Tools（国服）打开"))
             {
-                $"https://www.garlandtools.org/db/#item/{item.RowId}".OpenBrowser();
+                $"https://garlandtools.cn/db/#item/{item.RowId}".OpenBrowser();
             }
-            if (ImGui.Selectable("Open in Teamcraft"))
+            if (ImGui.Selectable("在Teamcraft打开"))
             {
                 $"https://ffxivteamcraft.com/db/en/item/{item.RowId}".OpenBrowser();
             }
-            if (ImGui.Selectable("Open in Universalis"))
+            if (ImGui.Selectable("在Universalis打开"))
             {
                 $"https://universalis.app/market/{item.RowId}".OpenBrowser();
             }
-            if (ImGui.Selectable("Copy Name"))
+            if (ImGui.Selectable("复制名称"))
             {
                 item.NameString.ToClipboard();
             }
-            if (ImGui.Selectable("Link"))
+            if (ImGui.Selectable("链接"))
             {
                 ChatUtilities.LinkItem(item);
             }
-            if (item.CanTryOn && ImGui.Selectable("Try On"))
+            if (item.CanTryOn && ImGui.Selectable("尝试"))
             {
                 if (PluginService.TryOn.CanUseTryOn)
                 {
@@ -223,22 +223,22 @@ namespace InventoryTools.Extensions
                 }
             }
 
-            if (item.CanOpenCraftLog && ImGui.Selectable("Open Crafting Log"))
+            if (item.CanOpenCraftLog && ImGui.Selectable("打开制作笔记"))
             {
                 PluginService.GameInterface.OpenCraftingLog(item.RowId);
             }
 
-            if (item.CanOpenGatheringLog && ImGui.Selectable("Open Gathering Log"))
+            if (item.CanOpenGatheringLog && ImGui.Selectable("打开采集笔记"))
             {
                 PluginService.GameInterface.OpenGatheringLog(item.RowId);
             }
 
-            if (item.CanOpenGatheringLog && ImGui.Selectable("Gather with Gatherbuddy"))
+            if (item.CanOpenGatheringLog && ImGui.Selectable("用Gather Buddy采集"))
             {
                 Service.Commands.ProcessCommand("/gather " + item.NameString);
             }
 
-            if (ImGui.Selectable("More Information"))
+            if (ImGui.Selectable("更多信息"))
             {
                 PluginService.WindowService.OpenItemWindow(item.RowId);   
             }
