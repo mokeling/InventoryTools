@@ -1,6 +1,5 @@
 # Allagan Tools
-Dalamud plugin for inventory tracking, item searching, craft lists and item information(like garland tools).
-
+Dalamud 插件，用于库存跟踪、物品搜索、制作清单和物品信息（类似Garland Tools）。
 
 ## Support
 Open an issue here or join the goatplace discord.
