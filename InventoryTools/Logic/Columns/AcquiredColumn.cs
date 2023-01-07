@@ -26,11 +26,11 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem.Item);
         }
 
-        public override string Name { get; set; } = "Acquired";
+        public override string Name { get; set; } = "已习得";
         public override float Width { get; set; } = 125.0f;
 
         public override string HelpText { get; set; } =
-            "If a item can be acquired(mounts, minions, etc) this shows whether or not it has been.";
+            "如果是一个可以被习得的物品（坐骑、宠物等），这会显示它是否已习得。";
         
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;

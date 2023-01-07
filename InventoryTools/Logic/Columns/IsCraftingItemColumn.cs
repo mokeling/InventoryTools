@@ -22,9 +22,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Is Crafting?";
+        public override string Name { get; set; } = "可用来制作？";
         public override float Width { get; set; } = 100;
-        public override string HelpText { get; set; } = "Can this item be used to craft another item?";
+        public override string HelpText { get; set; } = "这个物品可以用来制作另一个物品吗？";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

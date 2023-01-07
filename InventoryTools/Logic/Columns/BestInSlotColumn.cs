@@ -70,11 +70,11 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Relative Item Level";
+        public override string Name { get; set; } = "相对物品品级";
         public override float Width { get; set; } = 80;
 
         public override string HelpText { get; set; } =
-            "Shows the relative item level of either your items or your retainers items compared to the item shown. This will show a drop down in the filter that lets you pick which character you are comparing against. A negative value indicates it's worse, a positive indicates it's better.";
+            "显示您或您雇员的物品与显示的物品相比的相对品级。 这将在过滤器中显示一个下拉菜单，让您选择要比较的字符。负值表示更差，正值表示更好。";
 
         public override string FilterText { get; set; } ="";
 

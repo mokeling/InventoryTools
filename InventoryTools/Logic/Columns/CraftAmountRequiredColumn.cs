@@ -64,10 +64,10 @@ namespace InventoryTools.Logic.Columns
             }
         }
         public override FilterType AvailableIn { get; } = Logic.FilterType.CraftFilter;
-        public override string Name { get; set; } = "Required";
+        public override string Name { get; set; } = "所需";
         public override float Width { get; set; } = 60;
         public override bool? CraftOnly => true;
-        public override string HelpText { get; set; } = "This is the amount required to complete the craft.";
+        public override string HelpText { get; set; } = "这是完成制作所需的数量。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

@@ -23,9 +23,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "Equippable By Race";
+        public override string Name { get; set; } = "装备种族";
         public override float Width { get; set; } = 200;
-        public override string HelpText { get; set; } = "Shows if an item can be equipped by a specific race.";
+        public override string HelpText { get; set; } = "显示某个物品是否可以由特定种族装备。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Choice;

@@ -54,12 +54,12 @@ namespace InventoryTools.Logic.Columns
             }
         }
 
-        public override string Name { get; set; } = "Retrieve";
+        public override string Name { get; set; } = "检索";
         public override float Width { get; set; } = 60;
         public override bool? CraftOnly => false;
 
         public override string HelpText { get; set; } =
-            "This is the amount to retrieve from retainers.";
+            "这是从雇员中检索的数量（好像不太准）。";
         public override FilterType AvailableIn { get; } = Logic.FilterType.CraftFilter | Logic.FilterType.SortingFilter;
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;

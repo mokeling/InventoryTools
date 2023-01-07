@@ -50,9 +50,9 @@ namespace InventoryTools.Logic.Columns
         }
 
 
-        public override string Name { get; set; } = "Icon";
+        public override string Name { get; set; } = "图标";
         public override float Width { get; set; } = 40.0f;
-        public override string HelpText { get; set; } = "Shows the icon of the item, pressing it will open the more information window for the item.";
+        public override string HelpText { get; set; } = "显示物品的图标，按下它将打开物品的更多信息窗口。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

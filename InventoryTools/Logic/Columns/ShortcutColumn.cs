@@ -24,11 +24,11 @@ namespace InventoryTools.Logic.Columns
             return null;
         }
 
-        public override string Name { get; set; } = "Shortcuts";
+        public override string Name { get; set; } = "快捷指令";
         public override float Width { get; set; } = 32.0f;
 
         public override string HelpText { get; set; } =
-            "Provides a series of small buttons that allow opening garland tools and trying on items.";
+            "提供一系列小按钮，可以打开Garland Tools和试穿物品。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

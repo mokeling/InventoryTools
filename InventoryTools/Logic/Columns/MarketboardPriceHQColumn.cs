@@ -9,8 +9,8 @@ namespace InventoryTools.Logic.Columns
 {
     public class MarketBoardPriceHQColumn : GilColumn
     {
-        protected static readonly string LoadingString = "loading...";
-        protected static readonly string UntradableString = "untradable";
+        protected static readonly string LoadingString = "加载中...";
+        protected static readonly string UntradableString = "不可交易";
         protected static readonly int Loading = -1;
         protected static readonly int Untradable = -2;
 
@@ -46,7 +46,7 @@ namespace InventoryTools.Logic.Columns
             {
                 base.DoDraw(currentValue, rowIndex, filterConfiguration);
                 ImGui.SameLine();
-                if (ImGui.SmallButton("R##" + rowIndex))
+                if (ImGui.SmallButton("刷新##" + rowIndex))
                 {
                     return new RefreshPricingEvent();
                 }
@@ -97,10 +97,10 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "MB Average Price HQ";
+        public override string Name { get; set; } = "市场板HQ平均价格";
         public override float Width { get; set; } = 250.0f;
         public override string HelpText { get; set; } =
-            "Shows the average price of the HQ form of the item. This data is sourced from universalis.";
+            "显示物品HQ的平均价格。此数据来自 universalis。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

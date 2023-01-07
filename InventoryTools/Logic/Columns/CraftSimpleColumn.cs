@@ -23,15 +23,15 @@ namespace InventoryTools.Logic.Columns
             {
                 if (item.Item.ObtainedGathering)
                 {
-                    ImGui.TextColored(ImGuiColors.DalamudYellow, "Gather " + unavailable);
+                    ImGui.TextColored(ImGuiColors.DalamudYellow, "采集 " + unavailable);
                 }
                 else if (item.Item.ObtainedGil)
                 {
-                    ImGui.TextColored(ImGuiColors.DalamudYellow, "Buy " + unavailable);
+                    ImGui.TextColored(ImGuiColors.DalamudYellow, "购买 " + unavailable);
                 }
                 else
                 {
-                    ImGui.TextColored(ImGuiColors.DalamudRed, "Missing " + unavailable);
+                    ImGui.TextColored(ImGuiColors.DalamudRed, "所缺 " + unavailable);
                 }
 
                 return;
@@ -41,7 +41,7 @@ namespace InventoryTools.Logic.Columns
             {
                 if (item.Item.CanBeCrafted)
                 {
-                    ImGui.TextColored(ImGuiColors.ParsedBlue, "Craft " + (uint)Math.Ceiling((double)canCraft / item.Yield));
+                    ImGui.TextColored(ImGuiColors.ParsedBlue, "制作 " + (uint)Math.Ceiling((double)canCraft / item.Yield));
                 }
                 return;
             }
@@ -49,16 +49,16 @@ namespace InventoryTools.Logic.Columns
             var retrieve = Math.Min((int)item.QuantityAvailable, (int)item.QuantityNeeded);
             if (!item.IsOutputItem && retrieve != 0)
             {
-                ImGui.TextColored(ImGuiColors.DalamudOrange, "Retrieve " + retrieve);
+                ImGui.TextColored(ImGuiColors.DalamudOrange, "取回 " + retrieve);
                 return;
             }
 
             if (item.IsOutputItem)
             {
-                ImGui.TextColored(ImGuiColors.DalamudWhite, "Waiting");
+                ImGui.TextColored(ImGuiColors.DalamudWhite, "等待中");
                 return;
             }
-            ImGui.TextColored(ImGuiColors.HealerGreen, "Done");
+            ImGui.TextColored(ImGuiColors.HealerGreen, "完成");
         }
 
         public override string? CurrentValue(InventoryItem item)
@@ -76,12 +76,12 @@ namespace InventoryTools.Logic.Columns
             return "";
         }
 
-        public override string Name { get; set; } = "Next Step";
+        public override string Name { get; set; } = "下一步";
         public override float Width { get; set; } = 100;
         public override bool? CraftOnly => true;
 
         public override string HelpText { get; set; } =
-            "Shows a simplified version of what you should do next in your craft";
+            "显示您下一步应该做什么的简化版本。";
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = false;
         public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;

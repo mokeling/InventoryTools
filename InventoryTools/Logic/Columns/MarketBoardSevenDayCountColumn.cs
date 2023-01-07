@@ -9,8 +9,8 @@ namespace InventoryTools.Logic.Columns
 {
     public class MarketBoardSevenDayCountColumn : IntegerColumn
     {
-        protected static readonly string LoadingString = "loading...";
-        protected static readonly string UntradableString = "untradable";
+        protected static readonly string LoadingString = "加载中...";
+        protected static readonly string UntradableString = "不可交易";
         protected static readonly int Loading = -1;
         protected static readonly int Untradable = -2;
         
@@ -78,9 +78,9 @@ namespace InventoryTools.Logic.Columns
             return CurrentValue(item.InventoryItem);
         }
 
-        public override string Name { get; set; } = "MB " +  + ConfigurationManager.Config.MarketSaleHistoryLimit + " Sale Count";        
+        public override string Name { get; set; } = "市场板前" +  + ConfigurationManager.Config.MarketSaleHistoryLimit + " 天销售数量";        
         public override string HelpText { get; set; } =
-            "Shows the number of sales over a " +  + ConfigurationManager.Config.MarketSaleHistoryLimit + " day period for the item. This data is sourced from universalis.";
+            "显示该物品在 " +  + ConfigurationManager.Config.MarketSaleHistoryLimit + " 天内的销售数量。此数据来自 universalis。";
         public override float Width { get; set; } = 250.0f;
         public override string FilterText { get; set; } = "";
         public override bool HasFilter { get; set; } = true;

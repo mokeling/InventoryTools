@@ -19,7 +19,7 @@ public class DesynthesisClassColumn : TextColumn
             return null;
         }
 
-        return item.ClassJobRepair.Value?.Name.ToString().ToTitleCase() ?? "Unknown";
+        return item.ClassJobRepair.Value?.Name.ToString().ToTitleCase() ?? "未知";
     }
 
     public override string? CurrentValue(SortingResult item)
@@ -27,9 +27,9 @@ public class DesynthesisClassColumn : TextColumn
         return CurrentValue(item.InventoryItem);
     }
 
-    public override string Name { get; set; } = "Desynth Class";
+    public override string Name { get; set; } = "制作分解职业";
     public override float Width { get; set; } = 100;
-    public override string HelpText { get; set; } = "What class is related to de-synthesising this item?";
+    public override string HelpText { get; set; } = "这个物品需要什么职业来制作/分解？";
     public override string FilterText { get; set; } = "";
     public override bool HasFilter { get; set; } = true;
     public override ColumnFilterType FilterType { get; set; } = ColumnFilterType.Text;
