@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class IsAquariumItemFilter : BooleanFilter
     {
         public override string Key { get; set; } = "IsAquarium";
-        public override string Name { get; set; } = "Is Aquarium Item?";
-        public override string HelpText { get; set; } = "Can this item be put into a aquarium?";
+        public override string Name { get; set; } = "是水族箱物品吗？";
+        public override string HelpText { get; set; } = "这个物品可以放进水族箱吗？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Searching;
 
         public override FilterType AvailableIn { get; set; } =

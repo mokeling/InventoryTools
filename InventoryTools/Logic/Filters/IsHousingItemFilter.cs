@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class IsHousingItemFilter : BooleanFilter
     {
         public override string Key { get; set; } = "IsHousing";
-        public override string Name { get; set; } = "Is Housing Item?";
-        public override string HelpText { get; set; } = "Only show items that relate to housing.";
+        public override string Name { get; set; } = "是房屋物品吗？";
+        public override string HelpText { get; set; } = "只显示与房屋有关的物品。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Searching;
 
         public override FilterType AvailableIn { get; set; } =

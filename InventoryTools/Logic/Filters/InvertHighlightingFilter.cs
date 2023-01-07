@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class InvertHighlightingFilter : BooleanFilter
     {
         public override string Key { get; set; } = "InvertHighlighting";
-        public override string Name { get; set; } = "Invert Highlighting?";
-        public override string HelpText { get; set; } = "Should all the items not matching the filter be highlighted instead? If set to N/A will use the 'Invert Highlighting' setting inside the general configuration.";
+        public override string Name { get; set; } = "反转高亮？";
+        public override string HelpText { get; set; } = "是否应该突出显示所有与过滤器不匹配的物品？如果设置为 N/A 将使用常规配置中的“反转高亮”设置。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
 
         public override FilterType AvailableIn { get; set; } =

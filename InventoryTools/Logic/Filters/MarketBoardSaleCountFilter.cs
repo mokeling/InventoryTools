@@ -9,10 +9,10 @@ namespace InventoryTools.Logic.Filters
     public class MarketBoardSaleCountFilter : StringFilter
     {
         public override string Key { get; set; } = "MBSaleCount";
-        public override string Name { get; set; } = "Marketboard " + ConfigurationManager.Config.MarketSaleHistoryLimit + " Sale Counter";
+        public override string Name { get; set; } = "市场板前 " + ConfigurationManager.Config.MarketSaleHistoryLimit + " 天销售数量";
 
-        public override string HelpText { get; set; } = "Shows the number of sales that have been made within " +
-                                                        ConfigurationManager.Config.MarketSaleHistoryLimit + " days.";
+        public override string HelpText { get; set; } = "显示物品前 " +
+                                                        ConfigurationManager.Config.MarketSaleHistoryLimit + " 天销售数量。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Market;
 

@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class ItemLevelFilter : StringFilter
     {
         public override string Key { get; set; } = "ILvl";
-        public override string Name { get; set; } = "Item Level";
-        public override string HelpText { get; set; } = "The item level of the item";
+        public override string Name { get; set; } = "品级";
+        public override string HelpText { get; set; } = "物品品级。";
         public override FilterType AvailableIn { get; set; }  = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.GameItemFilter;
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Basic;
 

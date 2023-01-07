@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class IsCollectibleFilter : BooleanFilter
     {
         public override string Key { get; set; } = "Collectible";
-        public override string Name { get; set; } = "Is Collectible?";
-        public override string HelpText { get; set; } = "Is the item Collectible?";
+        public override string Name { get; set; } = "是收藏品吗？";
+        public override string HelpText { get; set; } = "这个物品是收藏品吗？";
         public override FilterType AvailableIn { get; set; }  = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.GameItemFilter;
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Gathering;
 

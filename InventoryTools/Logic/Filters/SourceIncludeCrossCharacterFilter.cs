@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     {
         public override int LabelSize { get; set; } = 240;
         public override string Key { get; set; } = "SourceIncludeCrossCharacter";
-        public override string Name { get; set; } = "Source - Cross Character?";
-        public override string HelpText { get; set; } = "Should items be sourced from cross character? Will default to using the default configuration in the main allagan tools configuration if not selected.";
+        public override string Name { get; set; } = "来源 - 跨角色？";
+        public override string HelpText { get; set; } = "物品应该来自跨角色吗？ 如果未选择，将默认使用Allagan Tools配置中的默认配置。";
         public override FilterType AvailableIn { get; set; } = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.CraftFilter;
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
 

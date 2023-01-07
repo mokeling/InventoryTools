@@ -12,9 +12,9 @@ namespace InventoryTools.Logic.Filters
     {
         public override string Key { get; set; } = "UiCategory";
         
-        public override string Name { get; set; } = "Categories";
+        public override string Name { get; set; } = "类别";
         
-        public override string HelpText { get; set; } = "Filter by the categories the game gives items when you scroll over them.";
+        public override string HelpText { get; set; } = "当您在物品上滚动时，按游戏提供的物品类别进行过滤。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Searching;
 
         private Dictionary<uint, string> _choices = new();

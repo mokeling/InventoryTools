@@ -12,9 +12,9 @@ namespace InventoryTools.Logic.Filters
     {
         public override string Key { get; set; } = "SchCategory";
         
-        public override string Name { get; set; } = "Market Board Categories";
+        public override string Name { get; set; } = "市场板类别";
         
-        public override string HelpText { get; set; } = "Filter by the categories available on the market board.";
+        public override string HelpText { get; set; } = "按市场板上可用的类别过滤。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Searching;
 
         private Dictionary<uint, string> _choices = new();

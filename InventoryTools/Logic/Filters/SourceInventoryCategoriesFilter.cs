@@ -21,9 +21,9 @@ namespace InventoryTools.Logic.Filters
         
         public override int LabelSize { get; set; } = 240;
         public override string Key { get; set; } = "SourceInventoryCategories";
-        public override string Name { get; set; } = "Source - Inventory Categories";
+        public override string Name { get; set; } = "来源 - 库存类别";
         public override string HelpText { get; set; } =
-            "This is a list of sources categories to search in. It will attempt to search for items in any bag of the given category.";
+            "这是要搜索的来源类别列表。它将尝试搜索任何给定类别库存中的物品。";
         
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         public override FilterType AvailableIn { get; set; } = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.CraftFilter;
@@ -42,10 +42,10 @@ namespace InventoryTools.Logic.Filters
         {
            
             var dict = new Dictionary<InventoryCategory, string>();
-            dict.Add(InventoryCategory.RetainerBags, "Retainer " +InventoryCategory.RetainerBags.FormattedName());
-            dict.Add(InventoryCategory.RetainerMarket, "Retainer " +InventoryCategory.RetainerMarket.FormattedName());
+            dict.Add(InventoryCategory.RetainerBags, "雇员 " +InventoryCategory.RetainerBags.FormattedName());
+            dict.Add(InventoryCategory.RetainerMarket, "雇员 " +InventoryCategory.RetainerMarket.FormattedName());
             dict.Add(InventoryCategory.CharacterEquipped, InventoryCategory.CharacterEquipped.FormattedName());
-            dict.Add(InventoryCategory.RetainerEquipped, "Retainer " +InventoryCategory.RetainerEquipped.FormattedName());
+            dict.Add(InventoryCategory.RetainerEquipped, "雇员 " +InventoryCategory.RetainerEquipped.FormattedName());
             dict.Add(InventoryCategory.CharacterBags, InventoryCategory.CharacterBags.FormattedName());
             dict.Add(InventoryCategory.CharacterSaddleBags, InventoryCategory.CharacterSaddleBags.FormattedName());
             dict.Add(InventoryCategory.CharacterPremiumSaddleBags, InventoryCategory.CharacterPremiumSaddleBags.FormattedName());

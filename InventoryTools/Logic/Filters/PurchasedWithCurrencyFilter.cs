@@ -10,10 +10,10 @@ namespace InventoryTools.Logic.Filters
     public class PurchasedWithCurrencyFilter : UintMultipleChoiceFilter
     {
         public override string Key { get; set; } = "PurchaseWithCurrency";
-        public override string Name { get; set; } = "Purchased with Currency";
+        public override string Name { get; set; } = "用什么货币交易";
 
         public override string HelpText { get; set; } =
-            "Filter items based on the currency they can be purchased with.";
+            "根据可以交易的货币过滤物品。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Acquisition;
 

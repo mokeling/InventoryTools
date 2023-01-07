@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class IsArmoireItemFilter : BooleanFilter
     {
         public override string Key { get; set; } = "IsArmoire";
-        public override string Name { get; set; } = "Is Armoire Item?";
-        public override string HelpText { get; set; } = "Only show items that can be put into the armoire.";
+        public override string Name { get; set; } = "是收藏柜物品吗？";
+        public override string HelpText { get; set; } = "只显示可以放入收藏柜的物品。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Searching;
 
         public override FilterType AvailableIn { get; set; } =

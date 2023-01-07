@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class IsTimedNodeFilter : BooleanFilter
     {
         public override string Key { get; set; } = "TimedNode";
-        public override string Name { get; set; } = "Is Timed Node?";
-        public override string HelpText { get; set; } = "Is the item available in timed nodes?";
+        public override string Name { get; set; } = "限时？";
+        public override string HelpText { get; set; } = "这个物品在限时可用/采集？";
         public override FilterType AvailableIn { get; set; }  = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.GameItemFilter;
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Gathering;
 

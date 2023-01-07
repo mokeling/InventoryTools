@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class IsCraftingItemFilter : BooleanFilter
     {
         public override string Key { get; set; } = "IsCrafting";
-        public override string Name { get; set; } = "Is Crafting Item?";
-        public override string HelpText { get; set; } = "Only show items that relate to crafting.";
+        public override string Name { get; set; } = "是制作物品吗？";
+        public override string HelpText { get; set; } = "只显示与制作相关的物品。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Searching;
 
         public override FilterType AvailableIn { get; set; } =

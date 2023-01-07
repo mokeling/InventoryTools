@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class SellToVendorPriceFilter : StringFilter
     {
         public override string Key { get; set; } = "GSSalePrice";
-        public override string Name { get; set; } = "Sell to Shop Price";
-        public override string HelpText { get; set; } = "The price when bought from shops. !,>,<,>=,<= can be used for comparisons";
+        public override string Name { get; set; } = "收购价格";
+        public override string HelpText { get; set; } = "卖给商店价格。可用 !, >, <, >=, <= 比较";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Acquisition;
 
         public override FilterType AvailableIn { get; set; } =

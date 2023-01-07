@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class LeveIsCraftLeveFilter : BooleanFilter
     {
         public override string Key { get; set; } = "LeveIsCraftLeve";
-        public override string Name { get; set; } = "Is Craft Leve Item?";
-        public override string HelpText { get; set; } = "Is this item craftable and a hand-in for a leve?";
+        public override string Name { get; set; } = "是生产理符物品吗？";
+        public override string HelpText { get; set; } = "这个物品是可制作并且可以上交给理符？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Crafting;
 
         public override FilterType AvailableIn { get; set; } =

@@ -9,8 +9,8 @@ namespace InventoryTools.Logic.Filters
     public class MarketBoardPriceFilter : StringFilter
     {
         public override string Key { get; set; } = "MBPrice";
-        public override string Name { get; set; } = "Marketboard Price";
-        public override string HelpText { get; set; } = "The market board price of the item. For this to work you need to have automatic pricing enabled and also note that any background price updates will not be evaluated until an event that refreshes the inventory occurs(this happens fairly often).";
+        public override string Name { get; set; } = "市场板价格";
+        public override string HelpText { get; set; } = "物品的市场价格。为此，您需要启用自动价格，并注意在刷新库存之前，不会评估任何后台价格更新（这种情况经常发生）。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Market;
 
         public override FilterType AvailableIn { get; set; } =

@@ -13,10 +13,10 @@ namespace InventoryTools.Logic.Filters
     {
         public override int Order { get; set; } = 1;
         public override string Key { get; set; } = "Sources";
-        public override string Name { get; set; } = "Sources";
+        public override string Name { get; set; } = "来源";
 
         public override string HelpText { get; set; } =
-            "This lists all the sources that are applicable given the sources picked above.";
+            "这列出了所有适用于上面选择的来源。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         
@@ -42,7 +42,7 @@ namespace InventoryTools.Logic.Filters
             ImGui.NewLine();
             ImGui.Separator();
             ImGui.NewLine();
-            ImGui.Text("Source Information: ");
+            ImGui.Text("来源信息：");
             ImGui.SameLine();
             UiHelpers.HelpMarker(HelpText);
             var allCharacters = PluginService.CharacterMonitor.Characters;
@@ -65,7 +65,7 @@ namespace InventoryTools.Logic.Filters
             {
                 ImGui.PushStyleColor(ImGuiCol.Text,ImGuiColors.HealerGreen);
             }
-            ImGui.LabelText("##" + Key + "RetainerLabel", "Retainer Sources" + ":");
+            ImGui.LabelText("##" + Key + "RetainerLabel", "雇员" + ":");
             if (sources.Count != 0)
             {
                 ImGui.PopStyleColor();
@@ -91,7 +91,7 @@ namespace InventoryTools.Logic.Filters
             {
                 ImGui.PushStyleColor(ImGuiCol.Text,ImGuiColors.HealerGreen);
             }
-            ImGui.LabelText("##" + Key + "CharacterLabel", "Character Sources" + ":");
+            ImGui.LabelText("##" + Key + "CharacterLabel", "角色" + ":");
             if (sources.Count != 0)
             {
                 ImGui.PopStyleColor();

@@ -11,9 +11,9 @@ namespace InventoryTools.Logic.Filters
     {
         public override int LabelSize { get; set; } = 240;
         public override string Key { get; set; } = "SourceInventories";
-        public override string Name { get; set; } = "Source - Inventories";
+        public override string Name { get; set; } = "来源 - 库存";
         public override string HelpText { get; set; } =
-            "This is a list of source inventories to sort items from based on the filter configuration";
+            "这是一个来源清单列表，用于根据过滤器配置对物品进行排序";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         public override FilterType AvailableIn { get; set; } = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.CraftFilter;
         

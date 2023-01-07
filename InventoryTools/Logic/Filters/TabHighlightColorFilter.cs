@@ -8,10 +8,10 @@ namespace InventoryTools.Logic.Filters
     public class TabHighlightColorFilter : ColorFilter
     {
         public override string Key { get; set; } = "TabHighlightColor";
-        public override string Name { get; set; } = "Tab Highlight Color";
+        public override string Name { get; set; } = "高亮标签颜色";
 
         public override string HelpText { get; set; } =
-            "The color to set the highlighted tabs(which contain filtered items) to for this specific filter.";
+            "为这个特定过滤器设置突出显示的标签（包含过滤的物品）的颜色。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
 

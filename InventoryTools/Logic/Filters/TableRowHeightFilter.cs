@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters;
 public class TableRowHeightFilter : IntegerFilter
 {
     public override string Key { get; set; } = "TableRowHeight";
-    public override string Name { get; set; } = "Table Row Height";
-    public override string HelpText { get; set; } = "How many pixels high should each item row try to display at?";
+    public override string Name { get; set; } = "表格行高";
+    public override string HelpText { get; set; } = "每个项目行应尝试显示多少像素高？";
     public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
 
     public override FilterType AvailableIn { get; set; } = FilterType.SearchFilter | FilterType.SortingFilter |

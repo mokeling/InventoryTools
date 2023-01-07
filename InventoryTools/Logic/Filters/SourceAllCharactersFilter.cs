@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     {
         public override int LabelSize { get; set; } = 240;
         public override string Key { get; set; } = "SourceAllCharacters";
-        public override string Name { get; set; } = "Source - All Characters?";
-        public override string HelpText { get; set; } = "Use every characters inventory as a source. This will generally only be your own character unless you have cross-character inventory tracking enabled.";
+        public override string Name { get; set; } = "来源 - 所有角色？";
+        public override string HelpText { get; set; } = "使用每个角色库存作为来源。这通常只是您自己的角色，除非您启用了跨角色库存跟踪。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         public override FilterType AvailableIn { get; set; } = FilterType.SearchFilter | FilterType.SortingFilter | FilterType.CraftFilter;
         public override bool? FilterItem(FilterConfiguration configuration, InventoryItem item)
