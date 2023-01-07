@@ -17,7 +17,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <DalamudLibPath>$(AppData)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+        <DalamudLibPath>E:\FF XIV\FFXIV Tools\XIVLauncherCN\Roaming\addon\Hooks\dev\</DalamudLibPath>
     </PropertyGroup>
     
     <PropertyGroup>
@@ -104,8 +104,8 @@
             <ApiLevel>7</ApiLevel>
             <Author>Critical-Impact</Author>
             <Name>Allagan Tools</Name>
-            <Punchline>Can't find an item in your inventory? Need to find a specific item from all the games many items? Need help working out what materials you need for a craft? Allagan Tools can probably help. (formerly Inventory Tools)</Punchline>
-            <Description>Adds in a window that allows for the searching and filtering of items across your inventories and the entire games list of items. Adds visualisation in game to see both where your items are and where you should sort them.\n\nFeatures are always being added to Inventory Tools so keep up to date to receive them. Some of the currently included features are:\n\t- Market board integration \n\t- Item highlighting \n\t- Various ways to filter items including have acquired, is craftable, is housing, any many more \n\t- Browse all available game items </Description>
+            <Punchline>在您的库存中找不到物品？ 需要从所有游戏物品中找到特定物品吗？ 需要帮助找出制作所需的材料吗？Allagan Tools可能会有所帮助。（以前的Inventory Tools）</Punchline>
+            <Description>添加一个窗口，允许在您的库存和整个游戏物品列表中搜索和过滤物品。在游戏中添加可视化以查看您的物品的位置以及您应该将它们分类的位置。\n\n总添加新功能，因此请及时更新以接收它们。当前包括的一些功能有：\n\t- 市场板集成 \n\t- 物品高亮 \n\t- 各种方式来过滤物品，包括已获得、可制作、是家具等等 \n\t- 浏览所有可用的游戏物品 </Description>
             <IconUrl>https://raw.githubusercontent.com/Critical-Impact/InventoryTools/main/InventoryTools/Images/icon.png</IconUrl>
             <Tags>
                 <Tag>Inventory</Tag>
