@@ -8,10 +8,10 @@ namespace InventoryTools.Logic.Filters
     public class HighlightColorFilter : ColorFilter
     {
         public override string Key { get; set; } = "HighlightColor";
-        public override string Name { get; set; } = "Highlight Color";
+        public override string Name { get; set; } = "高亮颜色";
 
         public override string HelpText { get; set; } =
-            "The color to set the highlighted items to for this specific filter.";
+            "为该特定过滤器设置突出显示的颜色。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
 

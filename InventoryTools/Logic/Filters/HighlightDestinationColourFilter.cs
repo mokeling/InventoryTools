@@ -8,10 +8,10 @@ namespace InventoryTools.Logic.Filters
     public class HighlightDestinationColourFilter : ColorFilter
     {
         public override string Key { get; set; } = "HighlightDestinationColor";
-        public override string Name { get; set; } = "Highlight Destination Color";
+        public override string Name { get; set; } = "高亮目标栏位颜色";
 
         public override string HelpText { get; set; } =
-            "The color to set any items in the destination that match your source filter(assuming highlight destination duplicates is on).";
+            "设置目标栏位中与源栏位匹配的物品颜色（假设高亮目标重复项已打开）。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
 

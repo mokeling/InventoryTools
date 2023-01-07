@@ -11,8 +11,8 @@ namespace InventoryTools.Logic.Filters
     public class EquippableByRaceFilter : UintMultipleChoiceFilter
     {
         public override string Key { get; set; } = "EquippableByRace";
-        public override string Name { get; set; } = "Equippable By Race";
-        public override string HelpText { get; set; } = "Which races can this equipment be equipped by?";
+        public override string Name { get; set; } = "装备种族";
+        public override string HelpText { get; set; } = "哪些种族可以装备这个装备？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Basic;
 
         public override FilterType AvailableIn { get; set; } =

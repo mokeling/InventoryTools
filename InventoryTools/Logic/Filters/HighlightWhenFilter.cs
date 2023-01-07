@@ -8,7 +8,7 @@ namespace InventoryTools.Logic.Filters
 {
     public class HighlightWhenFilter : ChoiceFilter<string>
     {
-        public readonly string[] HighlightWhenItemsFilter = new string[] {"N/A", "Always", "When Searching"};
+        public readonly string[] HighlightWhenItemsFilter = new string[] {"N/A", "总是", "当搜索时"};
         public override string? CurrentValue(FilterConfiguration configuration)
         {
             return configuration.HighlightWhen ?? EmptyValue;
@@ -23,8 +23,8 @@ namespace InventoryTools.Logic.Filters
 
 
         public override string Key { get; set; } = "HighlightWhen";
-        public override string Name { get; set; } = "Highlight When?";
-        public override string HelpText { get; set; } = "When should the highlighting apply?";
+        public override string Name { get; set; } = "什么时候高亮？";
+        public override string HelpText { get; set; } = "什么时候应该突出显示？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
 
         public override FilterType AvailableIn { get; set; } =
