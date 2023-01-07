@@ -25,10 +25,10 @@ namespace InventoryTools.Logic.Filters.Abstract
             
             if (currentValue == true)
             {
-                return "Yes";
+                return "是";
             }
 
-            return "No";
+            return "否";
         }
 
         public bool? ConvertSelection(string selection)
@@ -38,7 +38,7 @@ namespace InventoryTools.Logic.Filters.Abstract
                 return null;
             }
 
-            if (selection == "Yes")
+            if (selection == "是")
             {
                 return true;
             }
@@ -46,7 +46,7 @@ namespace InventoryTools.Logic.Filters.Abstract
             return false;
         }
 
-        private static readonly string[] Choices = new []{"N/A", "Yes", "No"};
+        private static readonly string[] Choices = new []{"N/A", "是", "否"};
 
         public override void Draw(FilterConfiguration configuration)
         {

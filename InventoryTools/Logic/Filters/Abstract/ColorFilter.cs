@@ -36,14 +36,14 @@ namespace InventoryTools.Logic.Filters.Abstract
                 UpdateFilterConfiguration(configuration, value);
             }
             ImGui.SameLine();
-            if (HasValueSet(configuration) && ImGui.Button("Clear Color"))
+            if (HasValueSet(configuration) && ImGui.Button("清除颜色"))
             {
                 UpdateFilterConfiguration(configuration, null);
             }
             if (HasValueSet(configuration) && value.W == 0)
             {
                 ImGui.SameLine();
-                ImGui.TextColored(ImGuiColors.DalamudRed, "The alpha is currently set to 0, this will be invisible.");
+                ImGui.TextColored(ImGuiColors.DalamudRed, "Alpha通道当前设置为 0，这将是不可见的。");
             }
             ImGui.SameLine();
             UiHelpers.HelpMarker(HelpText);

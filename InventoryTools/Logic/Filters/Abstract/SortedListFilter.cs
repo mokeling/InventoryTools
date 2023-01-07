@@ -60,12 +60,12 @@ namespace InventoryTools.Logic.Filters.Abstract
                         RemoveItem(configuration, item.Key);
                     }
                     ImGui.SameLine();
-                    if (ImGui.Button( "Up##Column" + index))
+                    if (ImGui.Button( "↑##Column" + index))
                     {
                         MoveItemUp(configuration, item.Key);
                     }
                     ImGui.SameLine();
-                    if (ImGui.Button("Down##Column" + index))
+                    if (ImGui.Button("↓##Column" + index))
                     {
                         MoveItemDown(configuration, item.Key);
                     }
