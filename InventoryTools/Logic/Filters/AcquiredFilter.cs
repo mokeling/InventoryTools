@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class AcquiredFilter : BooleanFilter
     {
         public override string Key { get; set; } = "Acquired";
-        public override string Name { get; set; } = "Is Acquired?";
-        public override string HelpText { get; set; } = "Has this item be acquired?";
+        public override string Name { get; set; } = "已获得？";
+        public override string HelpText { get; set; } = "是否已获得此物品？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Acquisition;
 
         public override FilterType AvailableIn { get; set; } =

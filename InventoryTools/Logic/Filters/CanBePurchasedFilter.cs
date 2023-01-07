@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class CanBePurchasedFilter : BooleanFilter
     {
         public override string Key { get; set; } = "Purchasable";
-        public override string Name { get; set; } = "Can be Purchased?";
-        public override string HelpText { get; set; } = "Can this be item be purchased?";
+        public override string Name { get; set; } = "可以购买吗？";
+        public override string HelpText { get; set; } = "可以购买此物品吗？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Acquisition;
 
         public override FilterType AvailableIn { get; set; } =

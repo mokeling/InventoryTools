@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class CanBeGatheredFilter : BooleanFilter
     {
         public override string Key { get; set; } = "Gatherable";
-        public override string Name { get; set; } = "Can be Gathered?";
-        public override string HelpText { get; set; } = "Can this item be gathered from a node or caught?";
+        public override string Name { get; set; } = "可以采集吗？";
+        public override string HelpText { get; set; } = "这个物品可以通过采集获得吗？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Acquisition;
 
         public override FilterType AvailableIn { get; set; } =

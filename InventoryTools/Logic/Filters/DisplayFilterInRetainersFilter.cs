@@ -10,10 +10,10 @@ namespace InventoryTools.Logic.Filters
     public class DisplayFilterInRetainersFilter : ChoiceFilter<FilterItemsRetainerEnum>
     {
         public override string Key { get; set; } = "FilterInRetainers";
-        public override string Name { get; set; } = "Filter Items when in Retainer?";
+        public override string Name { get; set; } = "在雇员中过滤物品？";
 
         public override string HelpText { get; set; } =
-            "When talking with a retainer should the filter adjust itself to only show items that should be put inside the retainer from your inventory? If set to only, highlighting will only occur when at the retainer bell and when within a retainer.";
+            "与雇员交谈时，过滤器是否应该自行调整以仅显示应从您的库存中放入雇员中的物品？ 如果设置为仅，只会在传唤铃和雇员内高亮。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Display;
         public override FilterType AvailableIn { get; set; } =
@@ -49,17 +49,17 @@ namespace InventoryTools.Logic.Filters
         {
             if (choice == FilterItemsRetainerEnum.No)
             {
-                return "No";
+                return "否";
             }
 
             if (choice == FilterItemsRetainerEnum.Yes)
             {
-                return "Yes";
+                return "是";
             }
 
             if (choice == FilterItemsRetainerEnum.Only)
             {
-                return "Only";
+                return "仅";
             }
 
             return choice.ToString();

@@ -20,9 +20,9 @@ namespace InventoryTools.Logic.Filters
         }
         public override int LabelSize { get; set; } = 240;
         public override string Key { get; set; } = "DestinationInventoryCategories";
-        public override string Name { get; set; } = "Destination - Inventory Categories";
+        public override string Name { get; set; } = "目标栏位 - 库存类别";
         public override string HelpText { get; set; } =
-            "This is a list of destinations categories to sort items into. It will attempt to sort items into any bag of the given category.";
+            "这是要将物品分类到目标栏位的类别列表。它会尝试将物品分类到任何给定类别的背包中。";
         
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         public override FilterType AvailableIn { get; set; } = FilterType.SortingFilter;
@@ -41,10 +41,10 @@ namespace InventoryTools.Logic.Filters
         {
            
             var dict = new Dictionary<InventoryCategory, string>();
-            dict.Add(InventoryCategory.RetainerBags, "Retainer " +InventoryCategory.RetainerBags.FormattedName());
-            dict.Add(InventoryCategory.RetainerMarket, "Retainer " +InventoryCategory.RetainerMarket.FormattedName());
+            dict.Add(InventoryCategory.RetainerBags, "雇员 " +InventoryCategory.RetainerBags.FormattedName());
+            dict.Add(InventoryCategory.RetainerMarket, "雇员 " +InventoryCategory.RetainerMarket.FormattedName());
             dict.Add(InventoryCategory.CharacterEquipped, InventoryCategory.CharacterEquipped.FormattedName());
-            dict.Add(InventoryCategory.RetainerEquipped, "Retainer " +InventoryCategory.RetainerEquipped.FormattedName());
+            dict.Add(InventoryCategory.RetainerEquipped, "雇员 " +InventoryCategory.RetainerEquipped.FormattedName());
             dict.Add(InventoryCategory.CharacterBags, InventoryCategory.CharacterBags.FormattedName());
             dict.Add(InventoryCategory.CharacterSaddleBags, InventoryCategory.CharacterSaddleBags.FormattedName());
             dict.Add(InventoryCategory.CharacterPremiumSaddleBags, InventoryCategory.CharacterPremiumSaddleBags.FormattedName());

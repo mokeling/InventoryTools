@@ -9,10 +9,10 @@ namespace InventoryTools.Logic.Filters
     public class CraftItemFilter : IntegerFilter
     {
         public override string Key { get; set; } = "CraftItemFilter";
-        public override string Name { get; set; } = "WIP: Craft Item Filter";
+        public override string Name { get; set; } = "WIP：制作物品过滤器";
 
         public override string HelpText { get; set; } =
-            "Enter the ID of an item to list only items applicable to it's craft";
+            "输入物品的ID以仅列出适用于其制作的物品。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Crafting;
 

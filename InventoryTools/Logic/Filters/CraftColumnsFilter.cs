@@ -28,7 +28,7 @@ namespace InventoryTools.Logic.Filters
         }
 
         public override string Key { get; set; } = "Craft Columns";
-        public override string Name { get; set; } = "Craft Columns";
+        public override string Name { get; set; } = "制作栏目";
         public override string HelpText { get; set; } = "";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.CraftColumns;
         public override bool HasValueSet(FilterConfiguration configuration)
@@ -73,9 +73,9 @@ namespace InventoryTools.Logic.Filters
             
             var currentAddColumn = "";
             ImGui.SetNextItemWidth(LabelSize);
-            ImGui.LabelText("##" + Key + "Label", "Add new column: ");
+            ImGui.LabelText("##" + Key + "Label", "添加新栏目：");
             ImGui.SameLine();
-            if (ImGui.BeginCombo("Add##" + Key, currentAddColumn))
+            if (ImGui.BeginCombo("添加##" + Key, currentAddColumn))
             {
                 foreach(var column in value.OrderBy(c => c.Value.Name))
                 {

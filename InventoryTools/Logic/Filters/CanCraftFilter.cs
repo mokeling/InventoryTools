@@ -8,8 +8,8 @@ namespace InventoryTools.Logic.Filters
     public class CanCraftFilter : BooleanFilter
     {
         public override string Key { get; set; } = "CanCraft";
-        public override string Name { get; set; } = "Can Craft?";
-        public override string HelpText { get; set; } = "Can this be crafted?";
+        public override string Name { get; set; } = "可以制作吗？";
+        public override string HelpText { get; set; } = "这个物品可以制作吗？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Crafting;
 
         public override FilterType AvailableIn { get; set; } =

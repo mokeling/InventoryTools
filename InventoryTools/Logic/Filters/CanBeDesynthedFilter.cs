@@ -7,8 +7,8 @@ namespace InventoryTools.Logic.Filters
     public class CanBeDesynthedFilter : BooleanFilter
     {
         public override string Key { get; set; } = "desynth";
-        public override string Name { get; set; } = "Can be Desynthed?";
-        public override string HelpText { get; set; } = "Can this item be desynthesised?";
+        public override string Name { get; set; } = "是否可以分解";
+        public override string HelpText { get; set; } = "这个物品可以分解吗？";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Basic;
 
         public override FilterType AvailableIn { get; set; } =

@@ -13,10 +13,10 @@ namespace InventoryTools.Logic.Filters
     {
         public override int Order { get; set; } = 2;
         public override string Key { get; set; } = "Destinations";
-        public override string Name { get; set; } = "Destinations";
+        public override string Name { get; set; } = "目标栏位";
 
         public override string HelpText { get; set; } =
-            "This lists all the destinations that are applicable given the destinations picked above.";
+            "这列出了所有适用于上面选择的目标栏位。";
 
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         
