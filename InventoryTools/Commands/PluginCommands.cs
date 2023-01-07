@@ -10,7 +10,7 @@ namespace InventoryTools.Commands
     {
         [Command("/allagantools")]
         [Aliases("/atools")]
-        [HelpMessage("Shows the allagan tools filter window.")]
+        [HelpMessage("显示Allagan Tools过滤器窗口。")]
         public void ShowHideInventoryToolsCommand(string command, string args)
         {
             PluginService.WindowService.ToggleFiltersWindow();
@@ -19,7 +19,7 @@ namespace InventoryTools.Commands
         [Command("/inv")]
         [Aliases("/inventorytools")]
         [DoNotShowInHelp]
-        [HelpMessage("Shows the allagan tools filter window.")]
+        [HelpMessage("显示Allagan Tools过滤器窗口。")]
         public  void ShowHideInventoryToolsCommand2(string command, string args)
         {
             PluginService.WindowService.ToggleFiltersWindow();
@@ -28,14 +28,14 @@ namespace InventoryTools.Commands
 
         [Command("/atfiltertoggle")]
         [Aliases("/atf")]
-        [HelpMessage("Toggles the specified filter on/off and turns off any other filters.")]
+        [HelpMessage("打开/关闭指定的过滤器并关闭任何其他过滤器。")]
         public  void FilterToggleCommand(string command, string args)
         {
             PluginLog.Verbose(command);
             PluginLog.Verbose(args);
             if (args.Trim() == "")
             {
-                ChatUtilities.PrintError("You must enter the name of a filter.");
+                ChatUtilities.PrintError("您必须输入过滤器的名称。");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace InventoryTools.Commands
 
         [Command("/invf")]
         [DoNotShowInHelp]
-        [HelpMessage("Toggles the specified filter on/off and turns off any other filters.")]
+        [HelpMessage("打开/关闭指定的过滤器并关闭任何其他过滤器。")]
         public  void FilterToggleCommandIT(string command, string args)
         {
             FilterToggleCommand(command, args);
@@ -53,14 +53,14 @@ namespace InventoryTools.Commands
 
         [Command("/ifilter")]
         [DoNotShowInHelp]
-        [HelpMessage("Toggles the specified filter on/off and turns off any other filters.")]
+        [HelpMessage("打开/关闭指定的过滤器并关闭任何其他过滤器。")]
         public  void FilterToggleCommand3(string command, string args)
         {
             PluginLog.Verbose(command);
             PluginLog.Verbose(args);
             if (args.Trim() == "")
             {
-                ChatUtilities.PrintError("You must enter the name of a filter.");
+                ChatUtilities.PrintError("您必须输入过滤器的名称。");
             }
             else
             {
@@ -69,12 +69,12 @@ namespace InventoryTools.Commands
         }
 
         [Command("/openfilter")]
-        [HelpMessage("Toggles the specified filter as it's own window.")]
+        [HelpMessage("将指定的过滤器切换为它自己的窗口。")]
         public  void OpenFilterCommand(string command, string args)
         {
             if (args.Trim() == "")
             {
-                ChatUtilities.PrintError("You must enter the name of a filter.");
+                ChatUtilities.PrintError("您必须输入过滤器的名称。");
             }
             else
             {
@@ -83,14 +83,14 @@ namespace InventoryTools.Commands
         }
 
         [Command("/crafts")]
-        [HelpMessage("Opens the allagan tools crafts window")]
+        [HelpMessage("打开Allagan Tools制作窗口。")]
         public  void OpenCraftsWindow(string command, string args)
         {
             PluginService.WindowService.ToggleCraftsWindow();
         }
 
         [Command("/atconfig")]
-        [HelpMessage("Opens the allagan tools configuration window")]
+        [HelpMessage("打开Allagan Tools配置窗口。")]
         public  void OpenConfigurationWindow(string command, string args)
         {
             PluginService.WindowService.ToggleConfigurationWindow();
@@ -98,7 +98,7 @@ namespace InventoryTools.Commands
 
         [Command("/itconfig")]
         [DoNotShowInHelp]
-        [HelpMessage("Opens the allagan tools configuration window")]
+        [HelpMessage("打开Allagan Tools配置窗口。")]
         public void OpenConfigurationWindowIT(string command, string args)
         {
             OpenConfigurationWindow(command, args);
@@ -106,14 +106,14 @@ namespace InventoryTools.Commands
 
         [Command("/invconfig")]
         [DoNotShowInHelp]
-        [HelpMessage("Opens the allagan tools configuration window")]
+        [HelpMessage("打开Allagan Tools配置窗口。")]
         public  void OpenConfigurationWindow2(string command, string args)
         {
             PluginService.WindowService.ToggleConfigurationWindow();
         }
 
         [Command("/athelp")]
-        [HelpMessage("Opens the allagan tools help window")]
+        [HelpMessage("打开Allagan Tools帮助窗口。")]
         public  void OpenHelpWindow(string command, string args)
         {
             PluginService.WindowService.ToggleHelpWindow();
@@ -122,7 +122,7 @@ namespace InventoryTools.Commands
         [Command("/invhelp")]
         [Aliases("/ithelp")]
         [DoNotShowInHelp]
-        [HelpMessage("Opens the allagan tools help window")]
+        [HelpMessage("打开Allagan Tools帮助窗口。")]
         public  void OpenHelpWindow2(string command, string args)
         {
             PluginService.WindowService.ToggleHelpWindow();
@@ -131,7 +131,7 @@ namespace InventoryTools.Commands
         #if DEBUG
 
         [Command("/atdebug")]
-        [HelpMessage("Opens the allagan tools debug window")]
+        [HelpMessage("打开Allagan Tools调试窗口。")]
         public  void ToggleDebugWindow(string command, string args)
         {
             PluginService.WindowService.ToggleDebugWindow();
@@ -139,14 +139,14 @@ namespace InventoryTools.Commands
 
         [Command("/itdebug")]
         [DoNotShowInHelp]
-        [HelpMessage("Opens the allagan tools debug window")]
+        [HelpMessage("打开Allagan Tools调试窗口。")]
         public  void ToggleDebugWindowIT(string command, string args)
         {
             PluginService.WindowService.ToggleDebugWindow();
         }
 
         [Command("/atintro")]
-        [HelpMessage("Opens the allagan tools debug window")]
+        [HelpMessage("打开Allagan Tools调试窗口。")]
         public void ToggleIntroWindow(string command, string args)
         {
             PluginService.WindowService.OpenWindow<IntroWindow>(IntroWindow.AsKey);
@@ -154,7 +154,7 @@ namespace InventoryTools.Commands
 
         [Command("/itintro")]
         [DoNotShowInHelp]
-        [HelpMessage("Opens the allagan tools debug window")]
+        [HelpMessage("打开Allagan Tools调试窗口。")]
         public void ToggleIntroWindowIT(string command, string args)
         {
             ToggleIntroWindow(command,args);
@@ -183,7 +183,7 @@ namespace InventoryTools.Commands
 
         [Command("/atclosefilters")]
         [DoNotShowInHelp]
-        [HelpMessage("Closes all filter windows.")]
+        [HelpMessage("关闭所有过滤器窗口。")]
         public void CloseFilterWindows(string command, string args)
         {
             PluginService.WindowService.CloseFilterWindows();
