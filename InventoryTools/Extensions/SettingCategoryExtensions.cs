@@ -9,11 +9,11 @@ namespace InventoryTools.Extensions
             switch (settingCategory)
             {
                 case SettingCategory.General:
-                    return "General";
+                    return "通用";
                 case SettingCategory.Visuals:
-                    return "Visuals";
+                    return "视效";
                 case SettingCategory.MarketBoard:
-                    return "Marketboard";
+                    return "市场板";
             }
             return settingCategory.ToString();
         }

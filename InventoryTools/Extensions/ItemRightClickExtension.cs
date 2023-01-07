@@ -28,7 +28,7 @@ namespace InventoryTools.Extensions
                         ImGui.Separator();
                         firstItem = false;
                     }
-                    if (ImGui.Selectable("Add to craft list - " + filter.Name))
+                    if (ImGui.Selectable("添加到制作清单 - " + filter.Name))
                     {
                         filter.CraftList.AddCraftItem(item.RowId);
                         PluginService.WindowService.OpenCraftsWindow();
@@ -47,7 +47,7 @@ namespace InventoryTools.Extensions
                             ImGui.Separator();
                             firstItem = false;
                         }
-                        if (ImGui.Selectable("Add phase " + i + " to craft list - " + filter.Name))
+                        if (ImGui.Selectable("添加阶段 " + i + " 到制作清单 - " + filter.Name))
                         {
                             filter.CraftList.AddCraftItem(item.RowId, 1, InventoryItem.ItemFlags.None, i);
                             PluginService.WindowService.OpenCraftsWindow();
@@ -61,7 +61,7 @@ namespace InventoryTools.Extensions
 
             if (item.CanBeCrafted && !Service.ExcelCache.IsCompanyCraft(item.RowId))
             {
-                if (ImGui.Selectable("Add to new craft list"))
+                if (ImGui.Selectable("添加到新的制作清单"))
                 {
                     Service.Framework.RunOnTick(() =>
                     {
@@ -79,7 +79,7 @@ namespace InventoryTools.Extensions
             {
                 for (uint i = 0; i < 3; i++)
                 {
-                    if (ImGui.Selectable("Add phase " + i + " to new craft list"))
+                    if (ImGui.Selectable("添加阶段 " + i + " 到新的制作清单"))
                     {
                         Service.Framework.RunOnTick(() =>
                         {
