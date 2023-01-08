@@ -8,29 +8,26 @@ namespace InventoryTools.Sections
 {
     public class CharacterRetainerPage : IConfigPage
     {
-        public string Name { get; } = "Characters/Retainers";
+        public string Name { get; } = "角色/雇员";
         
         public void Draw()
         {
-            if (ImGui.CollapsingHeader("Characters", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("角色", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(5, 5) * ImGui.GetIO().FontGlobalScale);
-                if (ImGui.BeginTable("CharacterTable", 3, ImGuiTableFlags.BordersV |
-                                                             ImGuiTableFlags.BordersOuterV |
-                                                             ImGuiTableFlags.BordersInnerV |
-                                                             ImGuiTableFlags.BordersH |
-                                                             ImGuiTableFlags.BordersOuterH |
-                                                             ImGuiTableFlags.BordersInnerH))
+                if (ImGui.BeginTable("CharacterTable", 3, ImGuiTableFlags.Borders |
+                                                          ImGuiTableFlags.Resizable |
+                                                          ImGuiTableFlags.SizingFixedFit))
                 {
-                    ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 0);
-                    ImGui.TableSetupColumn("Display Name", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 1);
-                    ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 2);
+                    ImGui.TableSetupColumn("名称");
+                    ImGui.TableSetupColumn("显示名称");
+                    ImGui.TableSetupColumn("");
                     ImGui.TableHeadersRow();
                     var characters = PluginService.CharacterMonitor.GetPlayerCharacters();
                     if (characters.Length == 0)
                     {
                         ImGui.TableNextRow();
-                        ImGui.Text("No characters available.");
+                        ImGui.Text("没有可用角色。");
                         ImGui.TableNextColumn();
                         ImGui.TableNextColumn();
                     }
@@ -64,7 +61,7 @@ namespace InventoryTools.Sections
                         ImGui.TableNextColumn();
                         if (character.CharacterId != Service.ClientState.LocalContentId)
                         {
-                            if (ImGui.SmallButton("Remove##" + index))
+                            if (ImGui.SmallButton("移除##" + index))
                             {
                                 PluginService.CharacterMonitor.RemoveCharacter(character.CharacterId);
                             }
@@ -72,17 +69,17 @@ namespace InventoryTools.Sections
                             ImGui.SameLine();
                         }
 
-                        if (ImGui.SmallButton("Clear All Bags##" + index))
+                        if (ImGui.SmallButton("清理所有背包##" + index))
                         {
-                            ImGui.OpenPopup("Are you sure?##" + index);
+                            ImGui.OpenPopup("您确定吗？##" + index);
                         }
-                        if (ImGui.BeginPopupModal("Are you sure?##" + index))
+                        if (ImGui.BeginPopupModal("您确定吗？##" + index))
                         {
                             ImGui.Text(
-                                "Are you sure you want to clear all the bags stored for this character?.\nThis operation cannot be undone!\n\n");
+                                "您确定要清除该角色的所有库存吗？\n这个选择不可逆！\n\n");
                             ImGui.Separator();
 
-                            if (ImGui.Button("OK", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
+                            if (ImGui.Button("确定", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
                             {
                                 PluginService.InventoryMonitor.ClearCharacterInventories(character.CharacterId);
                                 ImGui.CloseCurrentPopup();
@@ -90,7 +87,7 @@ namespace InventoryTools.Sections
 
                             ImGui.SetItemDefaultFocus();
                             ImGui.SameLine();
-                            if (ImGui.Button("Cancel", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
+                            if (ImGui.Button("取消", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
                             {
                                 ImGui.CloseCurrentPopup();
                             }
@@ -104,29 +101,26 @@ namespace InventoryTools.Sections
 
                 ImGui.PopStyleVar();
             }
-            if (ImGui.CollapsingHeader("Retainers", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("雇员", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(5, 5) * ImGui.GetIO().FontGlobalScale);
-                if (ImGui.BeginTable("RetainerTable", 7, ImGuiTableFlags.BordersV |
-                                                             ImGuiTableFlags.BordersOuterV |
-                                                             ImGuiTableFlags.BordersInnerV |
-                                                             ImGuiTableFlags.BordersH |
-                                                             ImGuiTableFlags.BordersOuterH |
-                                                             ImGuiTableFlags.BordersInnerH))
+                if (ImGui.BeginTable("RetainerTable", 7, ImGuiTableFlags.Borders |
+                                                         ImGuiTableFlags.Resizable |
+                                                         ImGuiTableFlags.SizingFixedFit))
                 {
-                    ImGui.TableSetupColumn("Hire Order", ImGuiTableColumnFlags.WidthStretch, 30.0f, (uint) 0);
-                    ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 70.0f, (uint) 1);
-                    ImGui.TableSetupColumn("Gil", ImGuiTableColumnFlags.WidthStretch, 30.0f, (uint) 2);
-                    ImGui.TableSetupColumn("Level", ImGuiTableColumnFlags.WidthStretch, 40.0f, (uint) 3);
-                    ImGui.TableSetupColumn("Owner", ImGuiTableColumnFlags.WidthStretch, 60.0f, (uint) 4);
-                    ImGui.TableSetupColumn("Display Name", ImGuiTableColumnFlags.WidthStretch, 80.0f, (uint) 5);
-                    ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthStretch, 80.0f, (uint) 6);
+                    ImGui.TableSetupColumn("雇佣顺序");
+                    ImGui.TableSetupColumn("名称");
+                    ImGui.TableSetupColumn("金币");
+                    ImGui.TableSetupColumn("等级");
+                    ImGui.TableSetupColumn("所有者");
+                    ImGui.TableSetupColumn("显示名称");
+                    ImGui.TableSetupColumn("");
                     ImGui.TableHeadersRow();
                     var retainers = PluginService.CharacterMonitor.GetRetainerCharacters().OrderBy(c => c.Value.HireOrder).ToList();
                     if (retainers.Count == 0)
                     {
                         ImGui.TableNextRow();
-                        ImGui.Text("No retainers available.");
+                        ImGui.Text("没有可用雇员。");
                         ImGui.TableNextColumn();
                         ImGui.TableNextColumn();
                         ImGui.TableNextColumn();
@@ -160,7 +154,7 @@ namespace InventoryTools.Sections
                         ImGui.SameLine();
                         
                         ImGui.TableNextColumn();
-                        var characterName = "Unknown";
+                        var characterName = "未知";
                         if (PluginService.CharacterMonitor.Characters.ContainsKey(character.OwnerId))
                         {
                             var owner = PluginService.CharacterMonitor.Characters[character.OwnerId];
@@ -187,7 +181,7 @@ namespace InventoryTools.Sections
                         ImGui.TableNextColumn();
                         if (character.CharacterId != Service.ClientState.LocalContentId)
                         {
-                            if (ImGui.SmallButton("Remove##" + index))
+                            if (ImGui.SmallButton("移除##" + index))
                             {
                                 PluginService.CharacterMonitor.RemoveCharacter(character.CharacterId);
                             }
@@ -195,17 +189,17 @@ namespace InventoryTools.Sections
                             ImGui.SameLine();
                         }
 
-                        if (ImGui.SmallButton("Clear All Bags##" + index))
+                        if (ImGui.SmallButton("清理所有背包##" + index))
                         {
-                            ImGui.OpenPopup("Are you sure?##" + index);
+                            ImGui.OpenPopup("您确定吗？##" + index);
                         }
-                        if (ImGui.BeginPopupModal("Are you sure?##" + index))
+                        if (ImGui.BeginPopupModal("您确定吗？##" + index))
                         {
                             ImGui.Text(
-                                "Are you sure you want to clear all the bags stored for this retainer?.\nThis operation cannot be undone!\n\n");
+                                "您确定要清除该雇员的所有库存吗？\n这个选择不可逆！\n\n");
                             ImGui.Separator();
 
-                            if (ImGui.Button("OK", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
+                            if (ImGui.Button("确定", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
                             {
                                 PluginService.InventoryMonitor.ClearCharacterInventories(character.CharacterId);
                                 ImGui.CloseCurrentPopup();
@@ -213,7 +207,7 @@ namespace InventoryTools.Sections
 
                             ImGui.SetItemDefaultFocus();
                             ImGui.SameLine();
-                            if (ImGui.Button("Cancel", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
+                            if (ImGui.Button("取消", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
                             {
                                 ImGui.CloseCurrentPopup();
                             }

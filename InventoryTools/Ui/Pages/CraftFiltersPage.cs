@@ -8,29 +8,26 @@ namespace InventoryTools.Sections
 {
     public class CraftFiltersPage : IConfigPage
     {
-        public string Name { get; } = "Craft Lists";
+        public string Name { get; } = "制作清单";
         public void Draw()
         {
             var filterConfigurations = PluginService.FilterService.FiltersList.Where(c => c.FilterType == FilterType.CraftFilter && !c.CraftListDefault).ToList();
-            if (ImGui.CollapsingHeader("Filters", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("过滤器", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(5, 5) * ImGui.GetIO().FontGlobalScale);
-                if (ImGui.BeginTable("FilterConfigTable", 3, ImGuiTableFlags.BordersV |
-                                                             ImGuiTableFlags.BordersOuterV |
-                                                             ImGuiTableFlags.BordersInnerV |
-                                                             ImGuiTableFlags.BordersH |
-                                                             ImGuiTableFlags.BordersOuterH |
-                                                             ImGuiTableFlags.BordersInnerH))
+                if (ImGui.BeginTable("FilterConfigTable", 3, ImGuiTableFlags.Borders |
+                                                             ImGuiTableFlags.Resizable |
+                                                             ImGuiTableFlags.SizingFixedFit))
                 {
-                    ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 0);
-                    ImGui.TableSetupColumn("Order", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 1);
-                    ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 2);
+                    ImGui.TableSetupColumn("名称");
+                    ImGui.TableSetupColumn("顺序");
+                    ImGui.TableSetupColumn("");
                     ImGui.TableHeadersRow();
                     if (filterConfigurations.Count == 0)
                     {
                         ImGui.TableNextRow();
                         ImGui.TableNextColumn();
-                        ImGui.Text("No lists available.");
+                        ImGui.Text("没有可用清单。");
                         ImGui.TableNextColumn();
                         ImGui.TableNextColumn();
                     }
@@ -49,43 +46,43 @@ namespace InventoryTools.Sections
                         ImGui.TableNextColumn();
                         ImGui.Text((filterConfiguration.Order + 1).ToString());
                         ImGui.SameLine();
-                        if (ImGui.SmallButton("Up##" + index))
+                        if (ImGui.SmallButton("↑##" + index))
                         {
                             PluginService.FilterService.MoveFilterUp(filterConfiguration);
                         }
                         ImGui.SameLine();
-                        if (ImGui.SmallButton("Down##" + index))
+                        if (ImGui.SmallButton("↓##" + index))
                         {
                             PluginService.FilterService.MoveFilterDown(filterConfiguration);
                         }
                         
                         ImGui.TableNextColumn();
-                        if (ImGui.SmallButton("Export Configuration##" + index))
+                        if (ImGui.SmallButton("导出配置##" + index))
                         {
                             var base64 = filterConfiguration.ExportBase64();
                             ImGui.SetClipboardText(base64);
-                            ChatUtilities.PrintClipboardMessage("[Export] ", "Filter Configuration");
+                            ChatUtilities.PrintClipboardMessage("[导出] ", "过滤器配置");
                         }
 
                         ImGui.SameLine();
-                        if (ImGui.SmallButton("Remove##" + index))
+                        if (ImGui.SmallButton("移除##" + index))
                         {
-                            ImGui.OpenPopup("Delete?##" + index);
+                            ImGui.OpenPopup("删除吗？##" + index);
                         }
 
                         ImGui.SameLine();
-                        if (ImGui.SmallButton("Open as Window##" + index))
+                        if (ImGui.SmallButton("作为窗口打开##" + index))
                         {
                             PluginService.WindowService.OpenFilterWindow(filterConfiguration.Key);
                         }
 
-                        if (ImGui.BeginPopupModal("Delete?##" + index))
+                        if (ImGui.BeginPopupModal("删除吗？##" + index))
                         {
                             ImGui.Text(
-                                "Are you sure you want to delete this filter?.\nThis operation cannot be undone!\n\n");
+                                "您确定删除这个过滤器吗？\n这个选择不可逆！\n\n");
                             ImGui.Separator();
 
-                            if (ImGui.Button("OK", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
+                            if (ImGui.Button("确定", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
                             {
                                 PluginService.FilterService.RemoveFilter(filterConfiguration);
                                 ImGui.CloseCurrentPopup();
@@ -93,7 +90,7 @@ namespace InventoryTools.Sections
 
                             ImGui.SetItemDefaultFocus();
                             ImGui.SameLine();
-                            if (ImGui.Button("Cancel", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
+                            if (ImGui.Button("取消", new Vector2(120, 0) * ImGui.GetIO().FontGlobalScale))
                             {
                                 ImGui.CloseCurrentPopup();
                             }
@@ -108,16 +105,16 @@ namespace InventoryTools.Sections
                 ImGui.PopStyleVar();
             }
 
-            if (ImGui.CollapsingHeader("Create Filters", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("创建过滤器", ImGuiTreeNodeFlags.DefaultOpen))
             {
-                if (ImGui.Button("Add New Craft List"))
+                if (ImGui.Button("创建一个新的制作清单"))
                 {
                     PluginService.FilterService.AddNewCraftFilter();
                 }
 
                 ImGui.SameLine();
                 UiHelpers.HelpMarker(
-                    "This will create a new list that can be accessed from within the craft window showing you a breakdown of the required materials.");
+                    "这将创建一个新清单，可以从制作窗口访问，向您显示所需材料的明细。");
             }
 
         }
