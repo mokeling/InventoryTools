@@ -24,7 +24,7 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "WindowFilter";
-        public override string Name { get; set; } = "2）激活窗口过滤器";
+        public override string Name { get; set; } = "2）活动窗口过滤器";
 
         public override string HelpText { get; set; } =
             "这是当Allagan Tools窗口可见时激活的过滤器。";
