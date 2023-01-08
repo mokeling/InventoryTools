@@ -6,7 +6,7 @@ namespace InventoryTools.Ui
 {
     public class FilterWindow : Window
     {
-        public FilterWindow(string filterKey, string name = "Allagan Tools - Filter") : base(name)
+        public FilterWindow(string filterKey, string name = "Allagan Tools - 过滤器") : base(name)
         {
             _filterKey = filterKey;
             if (SelectedConfiguration != null)

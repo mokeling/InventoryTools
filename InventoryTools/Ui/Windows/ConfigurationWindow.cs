@@ -10,12 +10,12 @@ namespace InventoryTools.Ui
 {
     public class ConfigurationWindow : Window
     {
-        public ConfigurationWindow(string name = "Allagan Tools - Configuration") : base(name)
+        public ConfigurationWindow(string name = "Allagan Tools - 配置") : base(name)
         {
             SetupWindow();
         }
         
-        public ConfigurationWindow() : base("Allagan Tools - Configuration")
+        public ConfigurationWindow() : base("Allagan Tools - 配置")
         {
             SetupWindow();
         }
@@ -80,7 +80,7 @@ namespace InventoryTools.Ui
                 }
 
                 ImGui.NewLine();
-                ImGui.Text("Filters");
+                ImGui.Text("过滤器");
                 ImGui.Separator();
 
                 var filterIndex = _configPages.Count;

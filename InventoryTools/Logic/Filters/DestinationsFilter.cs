@@ -40,7 +40,7 @@ namespace InventoryTools.Logic.Filters
         public override void Draw(FilterConfiguration configuration)
         {
             ImGui.NewLine();
-            ImGui.Text("Destination Information: ");
+            ImGui.Text("目标栏位信息：");
             ImGui.SameLine();
             UiHelpers.HelpMarker(HelpText);
             var allCharacters = PluginService.CharacterMonitor.Characters;
@@ -63,7 +63,7 @@ namespace InventoryTools.Logic.Filters
             {
                 ImGui.PushStyleColor(ImGuiCol.Text,ImGuiColors.HealerGreen);
             }
-            ImGui.LabelText("##" + Key + "RetainerLabel", "Retainer Destinations" + ":");
+            ImGui.LabelText("##" + Key + "RetainerLabel", "雇员" + ":");
             if (destinations.Count != 0)
             {
                 ImGui.PopStyleColor();
@@ -89,7 +89,7 @@ namespace InventoryTools.Logic.Filters
             {
                 ImGui.PushStyleColor(ImGuiCol.Text,ImGuiColors.HealerGreen);
             }
-            ImGui.LabelText("##" + Key + "CharacterLabel", "Character Destinations" + ":");
+            ImGui.LabelText("##" + Key + "CharacterLabel", "角色" + ":");
             if (destinations.Count != 0)
             {
                 ImGui.PopStyleColor();

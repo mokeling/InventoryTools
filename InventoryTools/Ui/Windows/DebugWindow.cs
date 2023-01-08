@@ -37,11 +37,11 @@ namespace InventoryTools.Ui
         private FilterState? _filterState;
         private FilterResult? _filterResult;
 
-        public DebugWindow(string name = "Allagan Tools - Debug") : base(name)
+        public DebugWindow(string name = "Allagan Tools - 调试") : base(name)
         {
         }
         
-        public DebugWindow() : base("Allagan Tools - Debug")
+        public DebugWindow() : base("Allagan Tools - 调试")
         {
         }
         
@@ -49,11 +49,11 @@ namespace InventoryTools.Ui
         {
             if (ImGui.BeginChild("###ivDebugList", new Vector2(150, -1) * ImGui.GetIO().FontGlobalScale, true))
             {
-                if (ImGui.Selectable("Retainers", ConfigurationManager.Config.SelectedDebugPage == 0))
+                if (ImGui.Selectable("雇员", ConfigurationManager.Config.SelectedDebugPage == 0))
                 {
                     ConfigurationManager.Config.SelectedDebugPage = 0;
                 }
-                if (ImGui.Selectable("Inventories", ConfigurationManager.Config.SelectedDebugPage == 1))
+                if (ImGui.Selectable("库存", ConfigurationManager.Config.SelectedDebugPage == 1))
                 {
                     ConfigurationManager.Config.SelectedDebugPage = 1;
                 }
@@ -61,7 +61,7 @@ namespace InventoryTools.Ui
                 {
                     ConfigurationManager.Config.SelectedDebugPage = 2;
                 }
-                if (ImGui.Selectable("Retainer Debugger", ConfigurationManager.Config.SelectedDebugPage == 3))
+                if (ImGui.Selectable("雇员调试器", ConfigurationManager.Config.SelectedDebugPage == 3))
                 {
                     ConfigurationManager.Config.SelectedDebugPage = 3;
                 }
@@ -69,7 +69,7 @@ namespace InventoryTools.Ui
                 {
                     ConfigurationManager.Config.SelectedDebugPage = 4;
                 }
-                if (ImGui.Selectable("Crafting", ConfigurationManager.Config.SelectedDebugPage == 5))
+                if (ImGui.Selectable("制作", ConfigurationManager.Config.SelectedDebugPage == 5))
                 {
                     ConfigurationManager.Config.SelectedDebugPage = 5;
                 }
@@ -114,8 +114,8 @@ namespace InventoryTools.Ui
             {
                 if (ConfigurationManager.Config.SelectedDebugPage == 0)
                 {
-                    ImGui.Text("Character Information:");
-                    ImGui.Text(Service.ClientState.LocalPlayer?.Name.ToString() ?? "Not Logged in Yet");
+                    ImGui.Text("角色信息：");
+                    ImGui.Text(Service.ClientState.LocalPlayer?.Name.ToString() ?? "还未登录");
                     ImGui.Text("Actual:" + Service.ClientState.LocalContentId.ToString());
                     ImGui.Text("Reported:" + PluginService.CharacterMonitor.ActiveCharacter.ToString());
                     ImGui.Text("Retainers:");
@@ -147,7 +147,7 @@ namespace InventoryTools.Ui
                 }
                 else if (ConfigurationManager.Config.SelectedDebugPage == 1)
                 {
-                    ImGui.Text("Inventory Information:");
+                    ImGui.Text("库存信息：");
                     ImGui.BeginTable("retainerTable", 6);
                     ImGui.TableSetupColumn("Inventory ID");
                     ImGui.TableSetupColumn("Category");

@@ -45,11 +45,11 @@ namespace InventoryTools.Ui
         private List<FilterConfiguration>? _filters;
         private FilterConfiguration? _defaultFilter;
 
-        public CraftsWindow(string name = "Allagan Tools - Crafts") : base(name)
+        public CraftsWindow(string name = "Allagan Tools - 制作") : base(name)
         {
         }
         
-        public CraftsWindow() : base("Allagan Tools - Crafts")
+        public CraftsWindow() : base("Allagan Tools - 制作")
         {
         }
 
@@ -98,7 +98,7 @@ namespace InventoryTools.Ui
             var filterConfigurations = Filters;
             if (ImGui.BeginChild("###craftsList", new Vector2(180, -1) * ImGui.GetIO().FontGlobalScale, true))
             {
-                if (ImGui.BeginChild("CraftList", new Vector2(0, -28) * ImGui.GetIO().FontGlobalScale, false))
+                if (ImGui.BeginChild("制作清单", new Vector2(0, -28) * ImGui.GetIO().FontGlobalScale, false))
                 {
                     for (var index = 0; index < filterConfigurations.Count; index++)
                     {
@@ -115,7 +115,7 @@ namespace InventoryTools.Ui
                         }
                     }
                     ImGui.Separator();
-                    if (ImGui.Selectable("Default Configuration", filterConfigurations.Count + 1 == _selectedFilterTab))
+                    if (ImGui.Selectable("默认配置", filterConfigurations.Count + 1 == _selectedFilterTab))
                     {
                         _selectedFilterTab = filterConfigurations.Count + 1;
                     }
@@ -130,7 +130,7 @@ namespace InventoryTools.Ui
                     {
                         PluginService.PluginLogic.AddNewCraftFilter();
                     }
-                    ImGuiUtil.HoverTooltip("Add a new craft list.");
+                    ImGuiUtil.HoverTooltip("添加一个新的制作清单");
                     /*ImGui.SameLine();
                     if (ImGui.ImageButton(_addEphemeralIcon.ImGuiHandle, new Vector2(20, 20)* ImGui.GetIO().FontGlobalScale, new Vector2(0,0), new Vector2(1,1 ),2))
                     {
@@ -148,7 +148,7 @@ namespace InventoryTools.Ui
                     {
                         PluginService.WindowService.ToggleConfigurationWindow();
                     }
-                    ImGuiUtil.HoverTooltip("Open the configuration window.");
+                    ImGuiUtil.HoverTooltip("打开配置窗口。");
                     ImGui.EndChild();
                 }
 
@@ -163,7 +163,7 @@ namespace InventoryTools.Ui
                 {
                     if (ImGui.BeginChild("Content", new Vector2(0, 0) * ImGui.GetIO().FontGlobalScale, true))
                     {
-                        ImGui.Text("Get started by adding a craft list by hitting the + button on the bottom left.");
+                        ImGui.Text("通过点击左下角的 + 按钮添加制作清单开始。");
                     }
                 }
                 for (var index = 0; index < filterConfigurations.Count; index++)
@@ -207,7 +207,7 @@ namespace InventoryTools.Ui
                         var filterConfiguration = filterConfigurations[index];
                         if (filterConfiguration.FilterType == FilterType.CraftFilter)
                         {
-                            ImGui.Text("Add new Item");
+                            ImGui.Text("添加新物品");
                             var searchString = SearchString;
                             ImGui.InputText("##ItemSearch", ref searchString, 50);
                             if (_searchString != searchString)
@@ -217,13 +217,13 @@ namespace InventoryTools.Ui
                             ImGui.Separator();
                             if (_searchString == "")
                             {
-                                ImGui.Text("Start typing to search...");
+                                ImGui.Text("开始输入搜索...");
                             }
                             using var table = ImRaii.Table("", 2, ImGuiTableFlags.None);
                             if (!table)
                                 return;
 
-                            ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.None, 200);
+                            ImGui.TableSetupColumn("名称", ImGuiTableColumnFlags.None, 200);
                             ImGui.TableSetupColumn("", ImGuiTableColumnFlags.None, 16);
 
                             foreach (var datum in SearchItems)
@@ -250,7 +250,7 @@ namespace InventoryTools.Ui
                 {
                     var highlightItems = itemTable.HighlightItems;
                     UiHelpers.CenterElement(20 * ImGui.GetIO().FontGlobalScale);
-                    ImGui.Checkbox("Highlight?" + "###" + itemTable.Key + "VisibilityCheckbox", ref highlightItems);
+                    ImGui.Checkbox("高亮？" + "###" + itemTable.Key + "VisibilityCheckbox", ref highlightItems);
                     if (highlightItems != itemTable.HighlightItems)
                     {
                         PluginService.FilterService.ToggleActiveUiFilter(itemTable.FilterConfiguration);
@@ -264,12 +264,12 @@ namespace InventoryTools.Ui
                         itemTable.ClearFilters();
                     }
 
-                    ImGuiUtil.HoverTooltip("Clear the current search.");
+                    ImGuiUtil.HoverTooltip("清除当前搜索。");
 
                     ImGui.SameLine();
                     UiHelpers.CenterElement(20 * ImGui.GetIO().FontGlobalScale);
                     var hideCompleted = filterConfiguration.HideCompletedRows;
-                    ImGui.Checkbox("Hide Completed?" + "###" + itemTable.Key + "HideCompleted", ref hideCompleted);
+                    ImGui.Checkbox("隐藏完成项目？" + "###" + itemTable.Key + "HideCompleted", ref hideCompleted);
                     if (hideCompleted != filterConfiguration.HideCompletedRows)
                     {
                         filterConfiguration.HideCompletedRows = hideCompleted;
@@ -277,7 +277,7 @@ namespace InventoryTools.Ui
                         filterConfiguration.StartRefresh();
                     }
 
-                    ImGuiUtil.HoverTooltip("Hide any precrafts/gather/buy items once completed?");
+                    ImGuiUtil.HoverTooltip("隐藏任何完成后的制作/收集/购买物品？");
 
 
                     ImGui.SameLine();
@@ -289,7 +289,7 @@ namespace InventoryTools.Ui
                         _addItemBarOpen = !_addItemBarOpen;
                     }
 
-                    ImGuiUtil.HoverTooltip("Toggles the add item side bar.");
+                    ImGuiUtil.HoverTooltip("切换添加物品侧边栏。");
 
                     ImGui.EndChild();
                 }
@@ -317,14 +317,14 @@ namespace InventoryTools.Ui
                             (b, s) => { SaveCallback(itemTable, b, s); }, null, true);
                     }
 
-                    ImGuiUtil.HoverTooltip("Export to CSV");
+                    ImGuiUtil.HoverTooltip("导出为 CSV");
                     ImGui.SameLine();
                     unsafe
                     {
                         var subMarinePartsMenu = PluginService.GameUi.GetWindow("SubmarinePartsMenu");
                         if (subMarinePartsMenu != null)
                         {
-                            if (ImGui.Button("Add Submarine Parts to Craft"))
+                            if (ImGui.Button("将潜水艇部件添加到制作中"))
                             {
                                 var subAddon = (SubmarinePartsMenuAddon*)subMarinePartsMenu;
                                 for (int i = 0; i < 6; i++)
@@ -351,7 +351,7 @@ namespace InventoryTools.Ui
                     }
 
                     ImGui.SameLine();
-                    UiHelpers.VerticalCenter("Pending Market Requests: " + PluginService.Universalis.QueuedCount);
+                    UiHelpers.VerticalCenter("待定市场请求：" + PluginService.Universalis.QueuedCount);
 
                     var craftTable = PluginService.FilterService.GetCraftTable(filterConfiguration.Key);
                     craftTable?.DrawFooterItems();
@@ -367,7 +367,7 @@ namespace InventoryTools.Ui
                         _settingsActive = true;
                     }
 
-                    ImGuiUtil.HoverTooltip("Open the settings dialog for this craft list.");
+                    ImGuiUtil.HoverTooltip("打开此制作清单的设置对话框。");
                     ImGui.EndChild();
                 }
             }
@@ -393,26 +393,26 @@ namespace InventoryTools.Ui
                         }
 
                         ImGui.NewLine();
-                        if (ImGui.Button("Export Configuration to Clipboard"))
+                        if (ImGui.Button("导出配置到剪切板"))
                         {
                             var base64 = filterConfiguration.ExportBase64();
                             ImGui.SetClipboardText(base64);
-                            ChatUtilities.PrintClipboardMessage("[Export] ", "Filter Configuration");
+                            ChatUtilities.PrintClipboardMessage("[导出] ", "过滤器");
                         }
                     }
                     else
                     {
-                        ImGui.TextWrapped("This is the default configuration for new craft lists. Any new craft list will inherit this lists settings.");    
+                        ImGui.TextWrapped("这是新制作清单的默认配置。 任何新制作清单都将继承此列表设置。");    
                     }
 
                     var filterType = filterConfiguration.FormattedFilterType;
                     ImGui.SetNextItemWidth(100);
-                    ImGui.LabelText(labelName + "FilterTypeLabel", "Filter Type: ");
+                    ImGui.LabelText(labelName + "FilterTypeLabel", "过滤器类型：");
                     ImGui.SameLine();
                     ImGui.TextDisabled(filterType);
 
                     ImGui.SetNextItemWidth(150);
-                    ImGui.LabelText(labelName + "DisplayInTabs", "Display in Tab List: ");
+                    ImGui.LabelText(labelName + "DisplayInTabs", "在标签列表中显示：");
                     ImGui.SameLine();
                     var displayInTabs = filterConfiguration.DisplayInTabs;
                     if (ImGui.Checkbox(labelName + "DisplayInTabsCheckbox", ref displayInTabs))
@@ -502,12 +502,12 @@ namespace InventoryTools.Ui
                 if (filterConfiguration.CraftListDefault)
                 {
                     UiHelpers.VerticalCenter(
-                        "You are currently editing default craft list configuration. Press the tick on the right hand side to save configuration.");
+                        "您当前正在编辑默认制作清单配置。 按右侧的勾号以保存配置。");
                 }
                 else
                 {
                     UiHelpers.VerticalCenter(
-                        "You are currently editing the craft list's configuration. Press the tick on the right hand side to save configuration.");
+                        "您当前正在编辑制作清单的配置。 按右侧的勾号以保存配置。");
                 }
 
                 ImGui.SameLine();
@@ -521,7 +521,7 @@ namespace InventoryTools.Ui
                     _settingsActive = false;
                 }
 
-                ImGuiUtil.HoverTooltip("Return to the craft list.");
+                ImGuiUtil.HoverTooltip("返回制作清单。");
                 ImGui.EndChild();
             }
         }

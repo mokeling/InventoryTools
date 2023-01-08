@@ -36,12 +36,12 @@ namespace InventoryTools.Ui
         
         private List<FilterConfiguration>? _filters;
 
-        public FiltersWindow(string name = "Allagan Tools - Filters") : base(name)
+        public FiltersWindow(string name = "Allagan Tools - 过滤器") : base(name)
         {
             _tabLayout = Utils.GenerateRandomId();
         }
 
-        public FiltersWindow() : base("Allagan Tools - Filters")
+        public FiltersWindow() : base("Allagan Tools - 过滤器")
         {
         }
 
@@ -150,7 +150,7 @@ namespace InventoryTools.Ui
             {
                 var highlightItems = itemTable.HighlightItems;
                 UiHelpers.CenterElement(20 * ImGui.GetIO().FontGlobalScale);              
-                ImGui.Checkbox("Highlight?" + "###" + itemTable.Key + "VisibilityCheckbox",
+                ImGui.Checkbox("高亮？" + "###" + itemTable.Key + "VisibilityCheckbox",
                     ref highlightItems);
                 if (highlightItems != itemTable.HighlightItems)
                 {
@@ -165,7 +165,7 @@ namespace InventoryTools.Ui
                     itemTable.ClearFilters();
                 }
 
-                ImGuiUtil.HoverTooltip("Clear the current search.");
+                ImGuiUtil.HoverTooltip("清除当前搜索。");
 
                 ImGui.EndChild();
             }
@@ -206,7 +206,7 @@ namespace InventoryTools.Ui
                         PluginService.Universalis.QueuePriceCheck(item.RowId);
                     }
                 }
-                ImGuiUtil.HoverTooltip("Refresh Market Prices");
+                ImGuiUtil.HoverTooltip("刷新市场价格");
                 ImGui.SameLine();
                 UiHelpers.CenterElement(24 * ImGui.GetIO().FontGlobalScale);              
                 if (ImGui.ImageButton(_csvIcon.ImGuiHandle,
@@ -217,7 +217,7 @@ namespace InventoryTools.Ui
                         (b, s) => { SaveCallback(itemTable, b, s); }, null, true);
                 }
 
-                ImGuiUtil.HoverTooltip("Export to CSV");
+                ImGuiUtil.HoverTooltip("导出为 CSV");
                 if (filterConfiguration.FilterType == FilterType.CraftFilter)
                 {
                     unsafe
@@ -226,7 +226,7 @@ namespace InventoryTools.Ui
                         if (subMarinePartsMenu != null)
                         {
                             ImGui.SameLine();
-                            if (ImGui.Button("Add Company Craft to List"))
+                            if (ImGui.Button("添加部队合建到清单"))
                             {
                                 var subAddon = (SubmarinePartsMenuAddon*)subMarinePartsMenu;
                                 for (int i = 0; i < 6; i++)
@@ -253,13 +253,13 @@ namespace InventoryTools.Ui
                 }
 
                 ImGui.SameLine();
-                UiHelpers.VerticalCenter("Pending Market Requests: " + PluginService.Universalis.QueuedCount);
+                UiHelpers.VerticalCenter("待定市场请求：" + PluginService.Universalis.QueuedCount);
                 if (filterConfiguration.FilterType == FilterType.CraftFilter)
                 {
                     ImGui.SameLine();
-                    ImGui.Text("Total Cost NQ: " + filterConfiguration.CraftList.MinimumNQCost);
+                    ImGui.Text("NQ总成本：" + filterConfiguration.CraftList.MinimumNQCost);
                     ImGui.SameLine();
-                    ImGui.Text("Total Cost HQ: " + filterConfiguration.CraftList.MinimumHQCost);
+                    ImGui.Text("HQ总成本：" + filterConfiguration.CraftList.MinimumHQCost);
                 }
 
                 if (filterConfiguration.FilterType == FilterType.CraftFilter)
@@ -282,7 +282,7 @@ namespace InventoryTools.Ui
                 {
                     PluginService.WindowService.ToggleConfigurationWindow();
                 }
-                ImGuiUtil.HoverTooltip("Open the configuration window.");
+                ImGuiUtil.HoverTooltip("打开配置窗口。");
                 
                 ImGui.SetCursorPosY(0);
                 width -= 30 * ImGui.GetIO().FontGlobalScale;
@@ -294,7 +294,7 @@ namespace InventoryTools.Ui
                 {
                     PluginService.WindowService.ToggleCraftsWindow();
                 }
-                ImGuiUtil.HoverTooltip("Open the craft window.");
+                ImGuiUtil.HoverTooltip("打开制作窗口。");
                 
                 width -= 30 * ImGui.GetIO().FontGlobalScale;
                 ImGui.SetCursorPosX(width);
@@ -305,7 +305,7 @@ namespace InventoryTools.Ui
                 {
                     PluginService.WindowService.ToggleHelpWindow();
                 }
-                ImGuiUtil.HoverTooltip("Open the help window.");
+                ImGuiUtil.HoverTooltip("打开帮助窗口。");
                 
                 if (ConfigurationManager.Config.TetrisEnabled)
                 {
@@ -319,7 +319,7 @@ namespace InventoryTools.Ui
                         PluginService.WindowService.ToggleTetrisWindow();
                     }
 
-                    ImGuiUtil.HoverTooltip("Open the tetris input window.");
+                    ImGuiUtil.HoverTooltip("打开俄罗斯方块输入窗口。");
                 }
 
 

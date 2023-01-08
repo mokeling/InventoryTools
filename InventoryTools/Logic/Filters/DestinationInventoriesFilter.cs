@@ -11,9 +11,9 @@ namespace InventoryTools.Logic.Filters
     {
         public override int LabelSize { get; set; } = 240;
         public override string Key { get; set; } = "DestinationInventories";
-        public override string Name { get; set; } = "Destination - Inventories";
+        public override string Name { get; set; } = "目标栏位 - 库存";
         public override string HelpText { get; set; } =
-            "This is a list of destinations to sort items into.";
+            "这是将物品分类到的目标栏位列表。";
         public override FilterCategory FilterCategory { get; set; } = FilterCategory.Inventories;
         public override FilterType AvailableIn { get; set; } = FilterType.SortingFilter | FilterType.CraftFilter;
         

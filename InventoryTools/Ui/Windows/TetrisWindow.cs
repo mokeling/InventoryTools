@@ -10,11 +10,11 @@ namespace InventoryTools.Ui
     {
         public override bool SaveState => false;
 
-        public TetrisWindow(string name = "Allagan Tools - Tetris") : base(name)
+        public TetrisWindow(string name = "Allagan Tools - 俄罗斯方块") : base(name)
         {
             
         }
-        public TetrisWindow() : base("Allagan Tools - Tetris")
+        public TetrisWindow() : base("Allagan Tools - 俄罗斯方块")
         {
             
         }
@@ -22,18 +22,18 @@ namespace InventoryTools.Ui
         public override void Draw()
         {
             var tetrisGame = Misc.TetrisGame.Instance.Game;
-            ImGui.TextWrapped("Welcome to Tetris. ");
-            ImGui.Text("Please turn on the tetris overlay, this will overwrite the contents of your main inventory window.");
-            ImGui.Text("Please make sure your inventory is set to 'Open All'. While the overlay is active, you will not be able to access your inventory.");
+            ImGui.TextWrapped("欢迎使用俄罗斯方块。");
+            ImGui.Text("请打开俄罗斯方块覆盖，这将覆盖您的物品栏窗口内容。");
+            ImGui.Text("请确保您的物品栏显示类型设置为“全展开”。当叠加层处于活动状态时，您将无法访问您的物品栏。");
 
-            if (ImGui.Button(TetrisGame.TetrisEnabled ? "Disable Tetris Overlay" : "Enable Tetris Overlay"))
+            if (ImGui.Button(TetrisGame.TetrisEnabled ? "禁用俄罗斯方块覆盖" : "启用俄罗斯方块叠加"))
             {
                 TetrisGame.ToggleTetris();
             }
             
-            ImGui.Text("Overlay: " + (TetrisGame.TetrisEnabled ? "Enabled" : "Disabled"));
-            ImGui.Text("Current Status: " + tetrisGame.Status.ToString());
-            if ((tetrisGame.Status == Game.GameStatus.ReadyToStart || tetrisGame.Status == Game.GameStatus.Finished) && ImGui.Button("Start"))
+            ImGui.Text("覆盖：" + (TetrisGame.TetrisEnabled ? "启用" : "禁用"));
+            ImGui.Text("当前状态：" + tetrisGame.Status.ToString());
+            if ((tetrisGame.Status == Game.GameStatus.ReadyToStart || tetrisGame.Status == Game.GameStatus.Finished) && ImGui.Button("开始"))
             {
                 if (tetrisGame.Status == Game.GameStatus.Finished)
                 {
@@ -44,11 +44,11 @@ namespace InventoryTools.Ui
                     tetrisGame.Start();
                 }
             }
-            if (tetrisGame.Status == Game.GameStatus.InProgress && ImGui.Button("Pause"))
+            if (tetrisGame.Status == Game.GameStatus.InProgress && ImGui.Button("暂停"))
             {
                 tetrisGame.Pause();
             }
-            if ((tetrisGame.Status == Game.GameStatus.InProgress || tetrisGame.Status == Game.GameStatus.Paused) && ImGui.Button("End Game"))
+            if ((tetrisGame.Status == Game.GameStatus.InProgress || tetrisGame.Status == Game.GameStatus.Paused) && ImGui.Button("游戏结束"))
             {
                 tetrisGame.GameOver();
             }

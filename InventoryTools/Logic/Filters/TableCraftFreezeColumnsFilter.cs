@@ -7,7 +7,7 @@ namespace InventoryTools.Logic.Filters
     public class TableCraftFreezeRowsFilter : IntegerFilter
     {
         public override string Key { get; set; } = "TableCraftFreezeRows";
-        public override string Name { get; set; } = "冻结栏目";
+        public override string Name { get; set; } = "b）冻结栏目";
 
         public override string HelpText { get; set; } =
             "从1开始冻结的栏目数（滚动时始终显示）。";

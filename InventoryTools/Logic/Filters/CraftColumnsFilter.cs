@@ -73,7 +73,7 @@ namespace InventoryTools.Logic.Filters
             
             var currentAddColumn = "";
             ImGui.SetNextItemWidth(LabelSize);
-            ImGui.LabelText("##" + Key + "Label", "添加新栏目：");
+            ImGui.LabelText("##" + Key + "Label", "a）添加新栏目：");
             ImGui.SameLine();
             if (ImGui.BeginCombo("添加##" + Key, currentAddColumn))
             {

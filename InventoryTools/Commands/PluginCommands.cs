@@ -154,7 +154,7 @@ namespace InventoryTools.Commands
 
         [Command("/itintro")]
         [DoNotShowInHelp]
-        [HelpMessage("打开Allagan Tools调试窗口。")]
+        [HelpMessage("打开Allagan Tools介绍窗口。")]
         public void ToggleIntroWindowIT(string command, string args)
         {
             ToggleIntroWindow(command,args);

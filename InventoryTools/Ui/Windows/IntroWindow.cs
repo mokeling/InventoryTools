@@ -39,18 +39,18 @@ namespace InventoryTools.Ui
             ImGui.EndChild();
             ImGui.SameLine();
             ImGui.BeginChild("IntroRight", new Vector2(0, 0));
-            ImGui.TextWrapped("Welcome to Allagan Tools.");
-            ImGui.TextWrapped("Allagan Tools is a plugin for Final Fantasy XIV that was formerly called Inventory Tools. The addition of crafting and item windows has made the plugin larger than its original scope.");
-            ImGui.TextWrapped("There are now various new windows that can be opened via command shortcuts and from the main window.");
-            ImGui.TextWrapped("A large amount of the functionality of the plugin can be accessed by right clicking on items within the various windows. This includes information on ways to obtain items, gathering locations, store locations, recipes and more. ");
-            ImGui.TextWrapped("The data parsing for items is still being worked on and as such it will not be as comprehensive as Garland Tools and Teamcraft. However, Allagan Tools is constantly being updated and improved to provide you with the best experience possible.");
+            ImGui.TextWrapped("欢迎使用Allagan Tools.");
+            ImGui.TextWrapped("Allagan Tools 是 Final Fantasy XIV 的插件，以前称为 Inventory Tools。 添加了制作和物品窗口使插件比原来的应用范围更大。");
+            ImGui.TextWrapped("现在可以通过指令快捷方式和主窗口打开各种新窗口。");
+            ImGui.TextWrapped("可以通过右键单击窗口中的物品来访问插件的大量功能。这包括有关获取物品的方式、采集地点、贩卖位置、配方等信息。");
+            ImGui.TextWrapped("物品的数据解析仍在进行中，因此它不会像 Garland Tools 和 Teamcraft 那样全面。 但是，Allagan Tools 会不断更新和改进，以便为您提供最佳体验。");
             ImGui.NewLine();
-            if (ImGui.Button("Close"))
+            if (ImGui.Button("关闭"))
             {
                 Close();
             }
             ImGui.SameLine(0, 4);
-            if (ImGui.Button("Close & Open Main Window"))
+            if (ImGui.Button("关闭并打开主窗口"))
             {
                 Close();
                 PluginService.WindowService.OpenWindow<FiltersWindow>(FiltersWindow.AsKey);
