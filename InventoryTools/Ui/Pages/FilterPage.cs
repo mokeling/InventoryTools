@@ -27,10 +27,10 @@ namespace InventoryTools.Sections
             var filterConfiguration = FilterConfiguration;
             var filterName = filterConfiguration.Name;
             var labelName = "##" + filterConfiguration.Key;
-            if (ImGui.CollapsingHeader("General", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("通用", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 ImGui.SetNextItemWidth(100);
-                ImGui.LabelText(labelName + "FilterNameLabel", "Name: ");
+                ImGui.LabelText(labelName + "FilterNameLabel", "名称：");
                 ImGui.SameLine();
                 ImGui.InputText(labelName + "FilterName", ref filterName, 100);
                 if (filterName != filterConfiguration.Name)
@@ -39,21 +39,21 @@ namespace InventoryTools.Sections
                 }
                 
                 ImGui.NewLine();
-                if (ImGui.Button("Export Configuration to Clipboard"))
+                if (ImGui.Button("导出配置到剪切板"))
                 {
                     var base64 = filterConfiguration.ExportBase64();
                     ImGui.SetClipboardText(base64);
-                    ChatUtilities.PrintClipboardMessage("[Export] ", "Filter Configuration");
+                    ChatUtilities.PrintClipboardMessage("[导出] ", "过滤器配置");
                 }
 
                 var filterType = filterConfiguration.FormattedFilterType;
                 ImGui.SetNextItemWidth(100);
-                ImGui.LabelText(labelName + "FilterTypeLabel", "Filter Type: ");
+                ImGui.LabelText(labelName + "FilterTypeLabel", "过滤器类型：");
                 ImGui.SameLine();
                 ImGui.TextDisabled(filterType);
 
                 ImGui.SetNextItemWidth(150);
-                ImGui.LabelText(labelName + "DisplayInTabs", "Display in Tab List: ");
+                ImGui.LabelText(labelName + "DisplayInTabs", "在标签列表中显示：");
                 ImGui.SameLine();
                 var displayInTabs = filterConfiguration.DisplayInTabs;
                 if (ImGui.Checkbox(labelName + "DisplayInTabsCheckbox", ref displayInTabs))

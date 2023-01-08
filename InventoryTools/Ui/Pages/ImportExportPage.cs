@@ -8,30 +8,27 @@ namespace InventoryTools.Sections
 {
     public class ImportExportPage : IConfigPage
     {
-        public string Name { get; } =  "Import/Export";
+        public string Name { get; } = "导入/导出";
         public void Draw()
         {
             ImGui.PushID("ImportSection");
-            if (ImGui.CollapsingHeader("Export", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("导出", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 var filterConfigurations = PluginService.FilterService.FiltersList;
                 ImGui.PushStyleVar(ImGuiStyleVar.CellPadding, new Vector2(5, 5) * ImGui.GetIO().FontGlobalScale);
-                if (ImGui.BeginTable("FilterConfigTable", 3, ImGuiTableFlags.BordersV |
-                                                             ImGuiTableFlags.BordersOuterV |
-                                                             ImGuiTableFlags.BordersInnerV |
-                                                             ImGuiTableFlags.BordersH |
-                                                             ImGuiTableFlags.BordersOuterH |
-                                                             ImGuiTableFlags.BordersInnerH))
+                if (ImGui.BeginTable("FilterConfigTable", 3, ImGuiTableFlags.Borders |
+                                                             ImGuiTableFlags.Resizable |
+                                                             ImGuiTableFlags.SizingFixedFit))
                 {
-                    ImGui.TableSetupColumn("Name", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 0);
-                    ImGui.TableSetupColumn("Type", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 1);
-                    ImGui.TableSetupColumn("", ImGuiTableColumnFlags.WidthStretch, 100.0f, (uint) 2);
+                    ImGui.TableSetupColumn("名称");
+                    ImGui.TableSetupColumn("类型");
+                    ImGui.TableSetupColumn("");
                     ImGui.TableHeadersRow();
                     if (filterConfigurations.Count == 0)
                     {
                         ImGui.TableNextRow();
                         ImGui.TableNextColumn();
-                        ImGui.Text("No filters available.");
+                        ImGui.Text("没有可用清单。");
                         ImGui.TableNextColumn();
                         ImGui.TableNextColumn();
                     }
@@ -57,11 +54,11 @@ namespace InventoryTools.Sections
                         ImGui.TableNextColumn();
                         ImGui.Text(filterConfiguration.FormattedFilterType);
                         ImGui.TableNextColumn();
-                        if (ImGui.SmallButton("Export Configuration##" + index))
+                        if (ImGui.SmallButton("导出配置##" + index))
                         {
                             var base64 = filterConfiguration.ExportBase64();
                             ImGui.SetClipboardText(base64);
-                            ChatUtilities.PrintClipboardMessage("[Export] ", "Filter Configuration");
+                            ChatUtilities.PrintClipboardMessage("[导出] ", "过滤器配置");
                         }
                     }
 
@@ -71,22 +68,22 @@ namespace InventoryTools.Sections
                 ImGui.PopStyleVar();
             }
 
-            if (ImGui.CollapsingHeader("Import", ImGuiTreeNodeFlags.DefaultOpen))
+            if (ImGui.CollapsingHeader("导入", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 var importData = ImportData;
-                if (ImGui.InputTextMultiline("Paste filter here",ref importData, 5000, new Vector2(400, 200) * ImGui.GetIO().FontGlobalScale))
+                if (ImGui.InputTextMultiline("在此处粘贴过滤器", ref importData, 5000, new Vector2(400, 200) * ImGui.GetIO().FontGlobalScale))
                 {
                     ImportData = importData;
                     ImportFailed = false;
                 }
 
-                if (ImGui.Button("Import##ImportBtn"))
+                if (ImGui.Button("导入##ImportBtn"))
                 {
                     if (ImportData == "")
                     {
                         ImportFailed = true;
                         FailedReason =
-                            "You must paste a filter generated via the export function before pressing import.";
+                            "在按导入之前，您必须粘贴通过导出功能生成的过滤器。";
                     }
                     else
                     {
@@ -98,7 +95,7 @@ namespace InventoryTools.Sections
                         {
                             ImportFailed = true;
                             FailedReason =
-                                "Invalid data detected in import string. Please make sure this string is valid.";
+                                "在导入字符串中检测到无效数据。 请确保此字符串有效。";
                         }
                     }
                 }

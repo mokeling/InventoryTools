@@ -1127,19 +1127,19 @@ namespace InventoryTools.Logic
             {
                 if (FilterType.HasFlag(FilterType.SearchFilter))
                 {
-                    return "Search Filter";
+                    return "搜索";
                 }
                 else if (FilterType.HasFlag(FilterType.SortingFilter))
                 {
-                    return "Sort Filter";
+                    return "分类";
                 }
                 else if (FilterType.HasFlag(FilterType.GameItemFilter))
                 {
-                    return "Game Item Filter";
+                    return "游戏物品";
                 }
                 else if (FilterType.HasFlag(FilterType.CraftFilter))
                 {
-                    return "Craft List";
+                    return "制作清单";
                 }
                 return "";
             }
