@@ -17,8 +17,8 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "DestinationHighlightColour";
-        public override string Name { get; set; } = "Destination Highlight Colour";
-        public override string HelpText { get; set; } = "The color to set any items in the destination that match your source filter(assuming highlight destination duplicates is on).";
+        public override string Name { get; set; } = "1）目标栏位高亮颜色";
+        public override string HelpText { get; set; } = "设置目标栏位中与源过滤器匹配的物品的颜色（假设高亮目标栏位重复项已打开）。";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.DestinationHighlighting;
     }

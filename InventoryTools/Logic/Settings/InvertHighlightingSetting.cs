@@ -16,10 +16,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "InvertHighlighting";
-        public override string Name { get; set; } = "Invert Highlighting?";
+        public override string Name { get; set; } = "4）反转突出显示？";
 
         public override string HelpText { get; set; } =
-            "Should all the items not matching a filter be highlighted instead? This can be overridden in the filter configuration.";
+            "是否应该突出显示所有不匹配过滤器的项目？ 这可以在过滤器配置中被覆盖。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Highlighting;

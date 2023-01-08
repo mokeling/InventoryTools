@@ -16,10 +16,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "InvertDestinationHighlighting";
-        public override string Name { get; set; } = "Invert Destination Highlighting?";
+        public override string Name { get; set; } = "4）反转目标栏位高亮？";
 
         public override string HelpText { get; set; } =
-            "When highlighting destination items should the colour of the items be inverted?";
+            "突出显示目标栏位时，物品的颜色应该反转吗？";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.DestinationHighlighting;

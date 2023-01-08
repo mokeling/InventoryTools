@@ -24,10 +24,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "BackgroundFilter";
-        public override string Name { get; set; } = "Active Background Filter";
+        public override string Name { get; set; } = "1）活动背景过滤器";
 
         public override string HelpText { get; set; } =
-            "This is the filter that is active when the allagan tools window is not visible. This filter can be toggled with the associated slash commands.";
+            "这是当Allagan Tools窗口不可见时激活的过滤器。 可以使用相关的斜杠指令切换此过滤器。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.FilterSettings;
@@ -36,7 +36,7 @@ namespace InventoryTools.Logic.Settings
         {
             get
             {
-                var filterItems = new Dictionary<string, string> {{"", "None"}};
+                var filterItems = new Dictionary<string, string> {{"", "无"}};
                 foreach (var config in PluginService.FilterService.FiltersList)
                 {
                     filterItems.Add(config.Key, config.Name);

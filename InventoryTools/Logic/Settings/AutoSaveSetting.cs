@@ -17,10 +17,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "AutoSave";
-        public override string Name { get; set; } = "Auto save inventories/configuration?";
+        public override string Name { get; set; } = "3）自动保存库存/配置？";
 
         public override string HelpText { get; set; } =
-            "Should the inventories/configuration be automatically saved on a defined interval? While the plugin does save when the game is closed and when configurations are altered, it is not saved in cases of crashing so this attempts to alleviate this.";
+            "库存/配置是否应按定义的时间自动保存？ 虽然插件在游戏关闭和配置更改时会保存，但在崩溃的情况下不会，因此这可以缓解这种情况。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.AutoSave;

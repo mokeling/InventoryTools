@@ -16,10 +16,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "DisplayCrossCharacter";
-        public override string Name { get; set; } = "Allow Cross-Character Inventories?";
+        public override string Name { get; set; } = "允许跨角色库存？";
 
         public override string HelpText { get; set; } =
-            "This is an experimental feature, should characters not currently logged in and their associated retainers be shown in filter configurations?";
+            "这是一项实验性功能，是否应该在过滤器配置中显示当前未登录的角色及其雇员？";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Experimental;

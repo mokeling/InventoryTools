@@ -17,10 +17,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "TooltipDisplayOwned";
-        public override string Name { get; set; } = "Display Amount Owned?";
+        public override string Name { get; set; } = "2）显示拥有量？";
 
         public override string HelpText { get; set; } =
-            "When hovering an item, should the tooltip contain information about where the items are located.";
+            "当悬停物品时，帮助提示是否应包含有关物品所在位置的信息。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Tooltips;

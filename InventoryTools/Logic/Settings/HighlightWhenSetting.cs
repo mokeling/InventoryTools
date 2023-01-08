@@ -7,10 +7,10 @@ namespace InventoryTools.Logic.Settings
     {
         public static Dictionary<string, string> StaticChoices = new Dictionary<string, string>()
         {
-            {"Always", "Always"}, {"When Searching", "When Searching"}
+            {"总是", "总是"}, {"搜索时", "搜索时"}
         };
         
-        public override string DefaultValue { get; set; } = "When Searching";
+        public override string DefaultValue { get; set; } = "搜索时";
         
         public override string CurrentValue(InventoryToolsConfiguration configuration)
         {
@@ -23,8 +23,8 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "HighlightWhen";
-        public override string Name { get; set; } = "Highlight When?";
-        public override string HelpText { get; set; } = "When highlighting is turned on for a filter, should it show always or should it only show when searching in the item table?";
+        public override string Name { get; set; } = "3）什么时候高亮？";
+        public override string HelpText { get; set; } = "当为过滤器打开高亮显示时，它应该始终显示还是只在项目中搜索时显示？";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Highlighting;
 

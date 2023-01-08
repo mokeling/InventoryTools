@@ -16,10 +16,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "ShowFiltersTab";
-        public override string Name { get; set; } = "Show Filter Tab?";
+        public override string Name { get; set; } = "4）显示过滤器标签?";
 
         public override string HelpText { get; set; } =
-            "Should the main window show the tab called 'Filters' that lists all the available filters in one screen?";
+            "主窗口是否应显示名为“过滤器”的标签以在一个屏幕中列出所有可用的过滤器？";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.FilterSettings;

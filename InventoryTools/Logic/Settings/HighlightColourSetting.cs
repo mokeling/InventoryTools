@@ -18,8 +18,8 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "HighlightColour";
-        public override string Name { get; set; } = "Highlight Colour";
-        public override string HelpText { get; set; } = "The color to set the highlighted items to.";
+        public override string Name { get; set; } = "2）高亮颜色";
+        public override string HelpText { get; set; } = "设置突出显示的物品的颜色。";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Highlighting;
     }

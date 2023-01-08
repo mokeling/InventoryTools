@@ -16,8 +16,8 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "AutomaticallyDownloadPrices";
-        public override string Name { get; set; } = "Automatically download prices?";
-        public override string HelpText { get; set; } = "Should price data be automatically downloaded when it's viewed in a filter's item list?";
+        public override string Name { get; set; } = "1）自动下载价格？";
+        public override string HelpText { get; set; } = "在过滤器的物品列表中查看价格数据时是否应该自动下载？";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.MarketBoard;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Market;
     }

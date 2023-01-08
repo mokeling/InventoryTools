@@ -17,10 +17,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "ShowItemNumberRetainerList";
-        public override string Name { get; set; } = "Show item number in retainer list?";
+        public override string Name { get; set; } = "7）在雇员列表显示物品数量";
 
         public override string HelpText { get; set; } =
-            "Should the name of the retainer in the summoning bell list have the number of items to be sorted or are available in their inventory?";
+            "传唤铃列表中的雇员名称是否应该显示要分类或在他们的库存中可用的物品数量？";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Highlighting;

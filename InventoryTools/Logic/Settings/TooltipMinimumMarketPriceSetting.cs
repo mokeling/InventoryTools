@@ -17,10 +17,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "TooltipDisplayMBMinimum";
-        public override string Name { get; set; } = "Display Market Minimum Price?";
+        public override string Name { get; set; } = "4）显示市场最低价格？";
 
         public override string HelpText { get; set; } =
-            "When hovering an item, should the tooltip contain the average market price for NQ/HQ.";
+            "悬停物品时，帮助提示是否应该包含 NQ/HQ 的市场最低价格？";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Tooltips;

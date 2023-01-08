@@ -18,10 +18,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "RetainerListColour";
-        public override string Name { get; set; } = "Retainer List Colour";
+        public override string Name { get; set; } = "6）雇员列表颜色";
 
         public override string HelpText { get; set; } =
-            "The color to set the retainer(when the retainer contains filtered items) list to.";
+            "设置雇员（当雇员包含筛选项时）列表的颜色。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Highlighting;

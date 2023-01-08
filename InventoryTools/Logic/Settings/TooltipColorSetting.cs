@@ -16,8 +16,8 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "TooltipColor";
-        public override string Name { get; set; } = "Tooltip Colour";
-        public override string HelpText { get; set; } = "This is the colour of the text within the tooltip";
+        public override string Name { get; set; } = "帮助提示颜色";
+        public override string HelpText { get; set; } = "这是帮助提示中文本的颜色。";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Tooltips;
     }

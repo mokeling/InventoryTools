@@ -24,10 +24,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "WindowFilter";
-        public override string Name { get; set; } = "Active Window Filter";
+        public override string Name { get; set; } = "2）激活窗口过滤器";
 
         public override string HelpText { get; set; } =
-            "This is the filter that is active when the allagan tools window is visible.";
+            "这是当Allagan Tools窗口可见时激活的过滤器。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.FilterSettings;

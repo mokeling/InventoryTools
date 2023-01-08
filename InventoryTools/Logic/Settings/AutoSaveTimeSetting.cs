@@ -21,12 +21,12 @@ namespace InventoryTools.Logic.Settings
         {
             base.Draw(configuration);
             ImGui.SetNextItemWidth(LabelSize);
-            ImGui.LabelText("##NextAutoSave","Next Autosave: " + (PluginService.PluginLogic.NextSaveTime?.ToString() ?? "N/A"));
+            ImGui.LabelText("##NextAutoSave", "2）下一次自动保存：" + (PluginService.PluginLogic.NextSaveTime?.ToString() ?? "N/A"));
         }
 
         public override string Key { get; set; } = "AutoSaveMinutes";
-        public override string Name { get; set; } = "Auto save every";
-        public override string HelpText { get; set; } = "How many minutes should there be between each auto save?";
+        public override string Name { get; set; } = "1）自动保存";
+        public override string HelpText { get; set; } = "每次自动保存之间应该间隔多少分钟？";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.AutoSave;
     }

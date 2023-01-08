@@ -16,8 +16,8 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "MarketRefreshTime";
-        public override string Name { get; set; } = "Keep market prices for X hours";
-        public override string HelpText { get; set; } = "How long should we store the market prices for before refreshing from universalis?";
+        public override string Name { get; set; } = "2）保存市场价格X小时";
+        public override string HelpText { get; set; } = "在从universalis刷新之前，我们应该将市场价格保存多长时间？";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.MarketBoard;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Market;
 

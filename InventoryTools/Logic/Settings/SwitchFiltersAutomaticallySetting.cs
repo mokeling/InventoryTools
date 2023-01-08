@@ -16,10 +16,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "SwitchFiltersAutomatically";
-        public override string Name { get; set; } = "Switch filters automatically?";
+        public override string Name { get; set; } = "5）自动切换过滤器?";
 
         public override string HelpText { get; set; } =
-            "Should the active window filter automatically change when moving between each filter tab? The active filter will only change if there is an active filter already selected.";
+            "在每个过滤器选项卡之间移动时，激活窗口过滤器是否应该自动更改？ 仅当已选择激活过滤器时，激活过滤器才会更改。";
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.General;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.FilterSettings;
 

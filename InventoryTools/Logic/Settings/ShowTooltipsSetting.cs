@@ -16,10 +16,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "ShowTooltips";
-        public override string Name { get; set; } = "Tweak Item Tooltip?";
+        public override string Name { get; set; } = "7）调整物品帮助提示？";
 
         public override string HelpText { get; set; } =
-            "When hovering an item in game, show additional information about the item including it's location in inventories and market price(if available).";
+            "悬停物品时，会显示有关该物品的其他信息，包括它在库存中的位置和市场价格（如果有）。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.Visuals;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Tooltips;

@@ -19,10 +19,10 @@ namespace InventoryTools.Logic.Settings
         }
 
         public override string Key { get; set; } = "MBSaleCountLimit";
-        public override string Name { get; set; } = "Marketboard Sale History Days";
+        public override string Name { get; set; } = "3）市场板销售历史天数";
 
         public override string HelpText { get; set; } =
-            "When calculating the total number of sales for an item, this is how many days back should be examined for sales data to calculate that number. If you change this, the existing data will not be wiped, you will need to either manually request a refresh of MB prices OR wait for the marketboard refresh to happen automatically.";
+            "在计算某项物品的总销售量时，应检查多少天前的销售数据以计算该数量。 如果您更改此项，现有数据将不会被擦除，您将需要手动请求刷新市场板价格或等待市场板自动刷新。";
 
         public override SettingCategory SettingCategory { get; set; } = SettingCategory.MarketBoard;
         public override SettingSubCategory SettingSubCategory { get; } = SettingSubCategory.Market;
