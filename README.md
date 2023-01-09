@@ -7,3 +7,5 @@ Open an issue here or join the goatplace discord.
 ## Contributing
 
 Contributions are welcome, but please make an issue first before writing any code. It's possible what you want to implement is out of scope for this project, or could be reworked so that it would provide greater benefit.
+
+笨比不会整子模块，CriticalCommonLib里有汉化要用我仓库里的，其他直接用作者的就行(〃´-ω･) 
