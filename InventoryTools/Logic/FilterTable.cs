@@ -127,7 +127,7 @@ namespace InventoryTools.Logic
             var isExpanded = false;
             ImGui.BeginChild("FilterTableContent", size * ImGui.GetIO().FontGlobalScale, false, ImGuiWindowFlags.HorizontalScrollbar); 
             
-            if((FilterConfiguration.FilterType != FilterType.CraftFilter || FilterConfiguration.FilterType == FilterType.CraftFilter && ImGui.CollapsingHeader("Items in Retainers/Bags", ImGuiTreeNodeFlags.DefaultOpen)) && ImGui.BeginTable(Key, Columns.Count, _tableFlags))
+            if((FilterConfiguration.FilterType != FilterType.CraftFilter || FilterConfiguration.FilterType == FilterType.CraftFilter && ImGui.CollapsingHeader("在雇员/背包的物品", ImGuiTreeNodeFlags.DefaultOpen)) && ImGui.BeginTable(Key, Columns.Count, _tableFlags))
             {
                 isExpanded = true;
                 var refresh = false;

@@ -165,13 +165,13 @@ namespace InventoryTools.Services
             var clonedFilter = GetDefaultCraftList().Clone();
             if (clonedFilter == null)
             {
-                var filter = new FilterConfiguration("New Craft List",
+                var filter = new FilterConfiguration("新的制作清单",
                     Guid.NewGuid().ToString("N"), FilterType.CraftFilter);
                 PluginService.FilterService.AddFilter(filter);
                 return filter;
             }
 
-            clonedFilter.Name = "New Craft List";
+            clonedFilter.Name = "新的制作清单";
             clonedFilter.GenerateNewTableId();
             clonedFilter.GenerateNewCraftTableId();
             clonedFilter.CraftListDefault = false;

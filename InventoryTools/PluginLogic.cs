@@ -467,7 +467,7 @@ namespace InventoryTools
 
         public void AddAllFilter()
         {
-            var allItemsFilter = new FilterConfiguration("All", FilterType.SearchFilter);
+            var allItemsFilter = new FilterConfiguration("全部", FilterType.SearchFilter);
             allItemsFilter.DisplayInTabs = true;
             allItemsFilter.SourceAllCharacters = true;
             allItemsFilter.SourceAllRetainers = true;
@@ -476,7 +476,7 @@ namespace InventoryTools
 
         public void AddRetainerFilter()
         {
-            var retainerItemsFilter = new FilterConfiguration("Retainers", FilterType.SearchFilter);
+            var retainerItemsFilter = new FilterConfiguration("雇员", FilterType.SearchFilter);
             retainerItemsFilter.DisplayInTabs = true;
             retainerItemsFilter.SourceAllRetainers = true;
             PluginService.FilterService.AddFilter(retainerItemsFilter);
@@ -484,7 +484,7 @@ namespace InventoryTools
 
         public void AddPlayerFilter()
         {
-            var playerItemsFilter = new FilterConfiguration("Player",  FilterType.SearchFilter);
+            var playerItemsFilter = new FilterConfiguration("玩家",  FilterType.SearchFilter);
             playerItemsFilter.DisplayInTabs = true;
             playerItemsFilter.SourceAllCharacters = true;
             PluginService.FilterService.AddFilter(playerItemsFilter);
@@ -492,7 +492,7 @@ namespace InventoryTools
 
         public void AddAllGameItemsFilter()
         {
-            var allGameItemsFilter = new FilterConfiguration("All Game Items", FilterType.GameItemFilter);
+            var allGameItemsFilter = new FilterConfiguration("所有游戏物品", FilterType.GameItemFilter);
             allGameItemsFilter.DisplayInTabs = true;            
             PluginService.FilterService.AddFilter(allGameItemsFilter);
 
@@ -514,7 +514,7 @@ namespace InventoryTools
 
         public void AddSampleFilter100Gil()
         {
-            var sampleFilter = new FilterConfiguration("100 gill or less", FilterType.SearchFilter);
+            var sampleFilter = new FilterConfiguration("100gil以下的物品", FilterType.SearchFilter);
             sampleFilter.DisplayInTabs = true;
             sampleFilter.SourceAllCharacters = true;
             sampleFilter.SourceAllRetainers = true;
@@ -525,15 +525,15 @@ namespace InventoryTools
 
         public void AddSampleFilterMaterials()
         {
-            var sampleFilter = new FilterConfiguration("Put away materials", FilterType.SortingFilter);
+            var sampleFilter = new FilterConfiguration("清理多余材料", FilterType.SortingFilter);
             sampleFilter.DisplayInTabs = true;
             sampleFilter.SourceCategories = new HashSet<InventoryCategory>() {InventoryCategory.CharacterBags};
             sampleFilter.DestinationCategories =  new HashSet<InventoryCategory>() {InventoryCategory.RetainerBags};
             sampleFilter.FilterItemsInRetainersEnum = FilterItemsRetainerEnum.Yes;
-            sampleFilter.HighlightWhen = "Always";
+            sampleFilter.HighlightWhen = "总是";
             var itemUiCategories = Service.ExcelCache.GetAllItemUICategories();
             //I'm making assumptions about the names of these and one day I will try to support more than english
-            var categories = new HashSet<string>() { "Bone", "Cloth", "Catalyst", "Crystal", "Ingredient", "Leather", "Lumber", "Metal", "Part", "Stone" };
+            var categories = new HashSet<string>() { "骨材", "布料", "触媒", "水晶", "食材", "皮革", "木材", "金属", "部件", "石材" };
             sampleFilter.ItemUiCategoryId = new List<uint>();
             foreach (var itemUiCategory in itemUiCategories)
             {
@@ -547,13 +547,13 @@ namespace InventoryTools
 
         public void AddSampleFilterDuplicatedItems()
         {
-            var sampleFilter = new FilterConfiguration("Duplicated SortedItems", FilterType.SortingFilter);
+            var sampleFilter = new FilterConfiguration("重复分类物品", FilterType.SortingFilter);
             sampleFilter.DisplayInTabs = true;
             sampleFilter.SourceCategories = new HashSet<InventoryCategory>() {InventoryCategory.CharacterBags,InventoryCategory.RetainerBags};
             sampleFilter.DestinationCategories =  new HashSet<InventoryCategory>() {InventoryCategory.RetainerBags};
             sampleFilter.FilterItemsInRetainersEnum = FilterItemsRetainerEnum.Yes;
             sampleFilter.DuplicatesOnly = true;
-            sampleFilter.HighlightWhen = "Always";
+            sampleFilter.HighlightWhen = "总是";
             PluginService.FilterService.AddFilter(sampleFilter);
         }
 
@@ -567,7 +567,7 @@ namespace InventoryTools
 
         private void InventoryMonitorOnOnInventoryChanged(Dictionary<ulong, Dictionary<InventoryCategory, List<InventoryItem>>> inventories, InventoryMonitor.ItemChanges itemChanges)
         {
-            PluginLog.Verbose("PluginLogic: Inventory changed, saving to config.");
+            PluginLog.Verbose("插件逻辑：库存已更改，正在保存到配置。");
             _clearCachedLines = true;
             PluginConfiguration.SavedInventories = inventories;
             if (PluginConfiguration.AutomaticallyDownloadMarketPrices)
@@ -660,7 +660,7 @@ namespace InventoryTools
                                     var sortedItem = sortedItems.First();
                                     if (sortedItem.Quantity != 0)
                                     {
-                                        textLines.Add("Retrieve: " + sortedItem.Quantity + "\n");
+                                        textLines.Add("取回: " + sortedItem.Quantity + "\n");
                                     }
                                 }
                             }
@@ -685,8 +685,8 @@ namespace InventoryTools
                             storageCount += oItem.Quantity;
 
                             var characterMonitorCharacter = PluginService.CharacterMonitor.Characters[oItem.RetainerId];
-                            var name = characterMonitorCharacter?.FormattedName ?? "Unknown";
-                            name = name.Trim().Length == 0 ? "Unknown" : name.Trim();
+                            var name = characterMonitorCharacter?.FormattedName ?? "未知";
+                            name = name.Trim().Length == 0 ? "未知" : name.Trim();
                             if (characterMonitorCharacter != null && characterMonitorCharacter.OwnerId != 0 &&
                                 PluginConfiguration.TooltipAddCharacterNameOwned &&
                                 PluginService.CharacterMonitor.Characters.ContainsKey(characterMonitorCharacter
@@ -705,8 +705,8 @@ namespace InventoryTools
 
                     if (storageCount > 0)
                     {
-                        textLines.Add($"Owned: {storageCount}\n");
-                        textLines.Add($"Locations:\n");
+                        textLines.Add($"所有者：{storageCount}\n");
+                        textLines.Add($"位置：\n");
                         foreach (var location in locations)
                         {
                             textLines.Add($"{indentation}{location}\n");
@@ -722,18 +722,18 @@ namespace InventoryTools
                         var marketData = PluginService.MarketCache.GetPricing((uint)itemId, false);
                         if (marketData != null)
                         {
-                            textLines.Add("Market Board Data:\n");
+                            textLines.Add("市场板数据：\n");
                             if (PluginConfiguration.TooltipDisplayMarketAveragePrice)
                             {
-                                textLines.Add($"{indentation}Average Price: {Math.Round(marketData.averagePriceNQ, 0)}\n");
+                                textLines.Add($"{indentation}平均价格：{Math.Round(marketData.averagePriceNQ, 0)}\n");
                                 textLines.Add(
-                                    $"{indentation}Average Price (HQ): {Math.Round(marketData.averagePriceHQ, 0)}\n");
+                                    $"{indentation}平均价格（HQ）：{Math.Round(marketData.averagePriceHQ, 0)}\n");
                             }
 
                             if (PluginConfiguration.TooltipDisplayMarketLowestPrice)
                             {
-                                textLines.Add($"{indentation}Minimum Price: {Math.Round(marketData.minPriceNQ, 0)}\n");
-                                textLines.Add($"{indentation}Minimum Price (HQ): {Math.Round(marketData.minPriceHQ, 0)}\n");
+                                textLines.Add($"{indentation}最低价格：{Math.Round(marketData.minPriceNQ, 0)}\n");
+                                textLines.Add($"{indentation}最低价格（HQ）：{Math.Round(marketData.minPriceHQ, 0)}\n");
                             }
                         }
                     }
@@ -791,7 +791,7 @@ namespace InventoryTools
                         .Where(p => columnType.IsAssignableFrom(p));
                     foreach (var type in types)
                     {
-                        if (type.IsClass && type.Name != "RightClickColumn" && !type.IsAbstract)
+                        if (type.IsClass && type.Name != "右键栏目" && !type.IsAbstract)
                         {
                             IColumn? instance = (IColumn?)Activator.CreateInstance(type);
                             if (instance != null)
@@ -963,7 +963,7 @@ namespace InventoryTools
                         ImGui.Image(textureDictionary[icon].ImGuiHandle, size);
                     }
                 } else {
-                    ImGui.BeginChild("WaitingTexture", size, true);
+                    ImGui.BeginChild("等待加载纹理", size, true);
                     ImGui.EndChild();
 
                     Task.Run(() => {
@@ -983,7 +983,7 @@ namespace InventoryTools
                     });
                 }
             } else {
-                ImGui.BeginChild("NoIcon", size, true);
+                ImGui.BeginChild("没有图标", size, true);
                 ImGui.EndChild();
             }
         }
@@ -1001,7 +1001,7 @@ namespace InventoryTools
                 var tex = UldTextureDictionary[name];
                 if (tex.ImGuiHandle == IntPtr.Zero)
                 {
-                    ImGui.BeginChild("FailedTexture", size, true);
+                    ImGui.BeginChild("纹理加载失败", size, true);
                     ImGui.Text(name);
                     ImGui.EndChild();
                 }
@@ -1024,7 +1024,7 @@ namespace InventoryTools
             }
             else
             {
-                ImGui.BeginChild("WaitingTexture", size, true);
+                ImGui.BeginChild("等待加载纹理", size, true);
                 ImGui.EndChild();
 
                 Task.Run(() =>
@@ -1059,7 +1059,7 @@ namespace InventoryTools
                 var tex = UldTextureDictionary[name];
                 if (tex.ImGuiHandle == IntPtr.Zero) {
                     ImGui.PushStyleColor(ImGuiCol.Border, new Vector4(1, 0, 0, 1));
-                    ImGui.BeginChild("FailedTexture", size, true);
+                    ImGui.BeginChild("纹理加载失败", size, true);
                     ImGui.Text(name);
                     ImGui.EndChild();
                     ImGui.PopStyleColor();
@@ -1079,7 +1079,7 @@ namespace InventoryTools
                     }
                 }
             } else {
-                ImGui.BeginChild("WaitingTexture", size, true);
+                ImGui.BeginChild("等待加载纹理", size, true);
                 ImGui.EndChild();
 
                 Task.Run(() => {
@@ -1111,7 +1111,7 @@ namespace InventoryTools
                 PluginService.WindowService.ToggleFilterWindow(filter.Key);
                 return true;
             }
-            Service.Chat.Print("Failed to find filter with name: " + filterName);
+            Service.Chat.Print("找不到名称为下的过滤器：" + filterName);
             return false;
         }
 

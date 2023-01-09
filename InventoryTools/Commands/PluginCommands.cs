@@ -146,7 +146,7 @@ namespace InventoryTools.Commands
         }
 
         [Command("/atintro")]
-        [HelpMessage("打开Allagan Tools调试窗口。")]
+        [HelpMessage("打开Allagan Tools介绍窗口。")]
         public void ToggleIntroWindow(string command, string args)
         {
             PluginService.WindowService.OpenWindow<IntroWindow>(IntroWindow.AsKey);

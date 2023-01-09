@@ -29,14 +29,14 @@ namespace InventoryTools.Logic.Settings.Abstract
             if (HasValueSet(configuration) && value.W == 0)
             {
                 ImGui.SameLine();
-                ImGui.TextColored(ImGuiColors.DalamudRed, "The alpha is currently set to 0, this will be invisible.");
+                ImGui.TextColored(ImGuiColors.DalamudRed, "alpha通道当前设置为 0，这将是不可见的。");
             }
             ImGui.SameLine();
             UiHelpers.HelpMarker(HelpText);
             if (HasValueSet(configuration))
             {
                 ImGui.SameLine();
-                if (ImGui.Button("Reset##" + Key + "Reset"))
+                if (ImGui.Button("重置##" + Key + "Reset"))
                 {
                     Reset(configuration);
                 }

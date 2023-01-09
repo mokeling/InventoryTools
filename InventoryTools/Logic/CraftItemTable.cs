@@ -54,7 +54,7 @@ namespace InventoryTools.Logic
             }
 
             var isExpanded = false;
-            if(ImGui.CollapsingHeader("To Craft", ImGuiTreeNodeFlags.DefaultOpen))
+            if(ImGui.CollapsingHeader("制作", ImGuiTreeNodeFlags.DefaultOpen))
             {
                 isExpanded = true;
                 ImGui.BeginChild("CraftContent", size * ImGui.GetIO().FontGlobalScale);
@@ -114,7 +114,7 @@ namespace InventoryTools.Logic
                             ImGui.TableNextColumn();
                             if (columnIndex == 1)
                             {
-                                ImGui.Text("No items have been added to the list. Add items from the top right or by right clicking on an item anywhere within the plugin.");
+                                ImGui.Text("没有物品被添加到列表中。从右上角（/crafts窗口）或右键插件内任意位置的物品添加。");
                             }
                         }
                     }
@@ -138,7 +138,7 @@ namespace InventoryTools.Logic
                     ImGui.TableNextRow(ImGuiTableRowFlags.Headers, 32);
                     ImGui.TableNextColumn();
                     ImGui.TableNextColumn();
-                    ImGui.Text("Precrafts:");
+                    ImGui.Text("半成品：");
                     for (var index = 0; index < preCrafts.Count; index++)
                     {
                         var item = preCrafts[index];
@@ -159,7 +159,7 @@ namespace InventoryTools.Logic
                     ImGui.TableNextRow(ImGuiTableRowFlags.Headers, 32);
                     ImGui.TableNextColumn();
                     ImGui.TableNextColumn();
-                    ImGui.Text("Gather/Buy:");
+                    ImGui.Text("采集/购买：");
                     for (var index = 0; index < everythingElse.Count; index++)
                     {
                         var item = everythingElse[index];

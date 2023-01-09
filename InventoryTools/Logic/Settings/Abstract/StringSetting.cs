@@ -34,7 +34,7 @@ namespace InventoryTools.Logic.Settings.Abstract
             if (HasValueSet(configuration))
             {
                 ImGui.SameLine();
-                if (ImGui.Button("Reset##" + Key + "Reset"))
+                if (ImGui.Button("重置##" + Key + "Reset"))
                 {
                     Reset(configuration);
                 }
