@@ -1,0 +1,8 @@
+[submodule "CriticalCommonLib"]
+	url = https://github.com/mokeling/CriticalCommonLib
+[submodule "FFXIVClientInterface"]
+	url = https://github.com/Critical-Impact/FFXIVClientInterface/tree/30bc07d8d7a363dc401232d92a42c9932454e058
+[submodule "LuminaSupplemental"]
+	url = https://github.com/Critical-Impact/LuminaSupplemental/tree/38968c97bb6d67ac7b88fdba814b6ee0e8cb1a0e
+[submodule "OtterGui"]
+	url = https://github.com/Ottermandias/OtterGui/tree/9df97a04115eb08804e5d15fb3b05063e537fed2
